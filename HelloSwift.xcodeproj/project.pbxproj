@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E1A1DBF490500A0632A /* AppDelegate.swift */; };
-		07FC6E1D1DBF490500A0632A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E1C1DBF490500A0632A /* ViewController.swift */; };
-		07FC6E201DBF490500A0632A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FC6E1E1DBF490500A0632A /* Main.storyboard */; };
 		07FC6E221DBF490500A0632A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FC6E211DBF490500A0632A /* Assets.xcassets */; };
 		07FC6E251DBF490500A0632A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FC6E231DBF490500A0632A /* LaunchScreen.storyboard */; };
+		07FC6E2D1DBF495200A0632A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E2C1DBF495200A0632A /* LoginViewController.swift */; };
+		07FC6E2F1DBF496200A0632A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E2E1DBF496200A0632A /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07FC6E171DBF490500A0632A /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FC6E1A1DBF490500A0632A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07FC6E1C1DBF490500A0632A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		07FC6E1F1DBF490500A0632A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07FC6E211DBF490500A0632A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07FC6E241DBF490500A0632A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07FC6E261DBF490500A0632A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07FC6E2C1DBF495200A0632A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07FC6E2E1DBF496200A0632A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				07FC6E1A1DBF490500A0632A /* AppDelegate.swift */,
-				07FC6E1C1DBF490500A0632A /* ViewController.swift */,
-				07FC6E1E1DBF490500A0632A /* Main.storyboard */,
 				07FC6E211DBF490500A0632A /* Assets.xcassets */,
 				07FC6E231DBF490500A0632A /* LaunchScreen.storyboard */,
 				07FC6E261DBF490500A0632A /* Info.plist */,
+				07FC6E2C1DBF495200A0632A /* LoginViewController.swift */,
+				07FC6E2E1DBF496200A0632A /* LoginView.swift */,
 			);
 			path = HelloSwift;
 			sourceTree = "<group>";
@@ -126,7 +126,6 @@
 			files = (
 				07FC6E251DBF490500A0632A /* LaunchScreen.storyboard in Resources */,
 				07FC6E221DBF490500A0632A /* Assets.xcassets in Resources */,
-				07FC6E201DBF490500A0632A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07FC6E1D1DBF490500A0632A /* ViewController.swift in Sources */,
+				07FC6E2D1DBF495200A0632A /* LoginViewController.swift in Sources */,
+				07FC6E2F1DBF496200A0632A /* LoginView.swift in Sources */,
 				07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,14 +145,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		07FC6E1E1DBF490500A0632A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07FC6E1F1DBF490500A0632A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		07FC6E231DBF490500A0632A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

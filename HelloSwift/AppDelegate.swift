@@ -13,9 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.setupRootScene()
         return true
     }
 
@@ -40,7 +39,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+// MARK:: Private API's
+    func setupRootScene() {
+        self.window = UIWindow()
+        let loginVC = LoginViewController()
+        let navigationController = UINavigationController.init(rootViewController: loginVC)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
+    }
 
-
+//// MARK:: custom Getters
+//     @nonobjc var window : UIWindow? {
+//        get {
+//           return UIWindow()
+//        }
+//    }
 }
 
