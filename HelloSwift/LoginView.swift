@@ -40,27 +40,28 @@ class LoginView : UIView {
     
     func createViews() {
         
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = .white
         
         self.userNameTextField = UITextField()
         self.userNameTextField?.placeholder = "User Name"
-        self.userNameTextField?.font = UIFont.systemFont(ofSize: 15)
-        self.userNameTextField?.keyboardType = UIKeyboardType.emailAddress
-        self.userNameTextField?.borderStyle = UITextBorderStyle.roundedRect
+        self.userNameTextField?.font = .systemFont(ofSize: 15)
+        self.userNameTextField?.keyboardType = .emailAddress
+        self.userNameTextField?.borderStyle = .roundedRect
         self.addSubview(self.userNameTextField!)
         
         self.passwordTextField = UITextField()
         self.passwordTextField?.placeholder = "Password"
-        self.passwordTextField?.font = UIFont.systemFont(ofSize: 15)
-        self.passwordTextField?.keyboardType = UIKeyboardType.default
-        self.passwordTextField?.borderStyle = UITextBorderStyle.roundedRect
+        self.passwordTextField?.font = .systemFont(ofSize: 15)
+        self.passwordTextField?.keyboardType = .default
+        self.passwordTextField?.borderStyle = .roundedRect
         self.addSubview(self.passwordTextField!)
         
         self.submitButton = UIButton()
-        self.submitButton?.backgroundColor = UIColor.black
-        self.submitButton?.setTitle("Submit", for: UIControlState.normal)
-        self.submitButton?.setTitleColor(UIColor.white, for: UIControlState.normal)
-        self.submitButton?.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        self.submitButton?.backgroundColor = .black
+        self.submitButton?.setTitle("Submit", for: .normal)
+        self.submitButton?.setTitleColor(.white, for: .normal)
+        self.submitButton?.titleLabel?.font = .systemFont(ofSize: 17)
+        self.submitButton?.layer.cornerRadius = 4.0
         self.addSubview(self.submitButton!)
     }
 }

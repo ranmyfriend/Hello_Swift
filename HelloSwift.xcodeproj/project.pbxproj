@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072669A61DC0AABD0068B7DD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669A51DC0AABD0068B7DD /* SignupViewController.swift */; };
+		072669A81DC0AACF0068B7DD /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669A71DC0AACF0068B7DD /* SignupView.swift */; };
 		07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E1A1DBF490500A0632A /* AppDelegate.swift */; };
 		07FC6E221DBF490500A0632A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FC6E211DBF490500A0632A /* Assets.xcassets */; };
 		07FC6E251DBF490500A0632A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FC6E231DBF490500A0632A /* LaunchScreen.storyboard */; };
 		07FC6E2D1DBF495200A0632A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E2C1DBF495200A0632A /* LoginViewController.swift */; };
 		07FC6E2F1DBF496200A0632A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E2E1DBF496200A0632A /* LoginView.swift */; };
+		07FC6E311DBF8E4900A0632A /* DecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E301DBF8E4900A0632A /* DecisionViewController.swift */; };
+		07FC6E331DBF8E5C00A0632A /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E321DBF8E5C00A0632A /* DecisionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		072669A51DC0AABD0068B7DD /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		072669A71DC0AACF0068B7DD /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		07FC6E171DBF490500A0632A /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FC6E1A1DBF490500A0632A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07FC6E211DBF490500A0632A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -22,6 +28,8 @@
 		07FC6E261DBF490500A0632A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07FC6E2C1DBF495200A0632A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		07FC6E2E1DBF496200A0632A /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		07FC6E301DBF8E4900A0632A /* DecisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionViewController.swift; sourceTree = "<group>"; };
+		07FC6E321DBF8E5C00A0632A /* DecisionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				07FC6E261DBF490500A0632A /* Info.plist */,
 				07FC6E2C1DBF495200A0632A /* LoginViewController.swift */,
 				07FC6E2E1DBF496200A0632A /* LoginView.swift */,
+				072669A51DC0AABD0068B7DD /* SignupViewController.swift */,
+				072669A71DC0AACF0068B7DD /* SignupView.swift */,
+				07FC6E301DBF8E4900A0632A /* DecisionViewController.swift */,
+				07FC6E321DBF8E5C00A0632A /* DecisionView.swift */,
 			);
 			path = HelloSwift;
 			sourceTree = "<group>";
@@ -136,9 +148,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072669A81DC0AACF0068B7DD /* SignupView.swift in Sources */,
+				072669A61DC0AABD0068B7DD /* SignupViewController.swift in Sources */,
+				07FC6E311DBF8E4900A0632A /* DecisionViewController.swift in Sources */,
 				07FC6E2D1DBF495200A0632A /* LoginViewController.swift in Sources */,
 				07FC6E2F1DBF496200A0632A /* LoginView.swift in Sources */,
 				07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */,
+				07FC6E331DBF8E5C00A0632A /* DecisionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +308,7 @@
 				07FC6E2B1DBF490500A0632A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

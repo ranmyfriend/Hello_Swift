@@ -10,14 +10,15 @@ import UIKit
 
 class LoginViewController : UIViewController {
     
+    var myView: LoginView! { return self.view as! LoginView }
+
     override func loadView() {
-//        view = LoginView(frame: UIScreen.main.bounds)
         super.loadView()
+        view = LoginView.init(frame: UIScreen.main.bounds)
     }
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login Scene"
-        self.view = LoginView(frame: UIScreen.main.bounds)
     }
 }

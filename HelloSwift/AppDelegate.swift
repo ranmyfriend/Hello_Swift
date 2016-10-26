@@ -43,8 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK:: Private API's
     func setupRootScene() {
         self.window = UIWindow()
-        let loginVC = LoginViewController()
-        let navigationController = UINavigationController.init(rootViewController: loginVC)
+        let decisionVC = DecisionViewController()
+        let navigationController = UINavigationController.init(rootViewController: decisionVC)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
