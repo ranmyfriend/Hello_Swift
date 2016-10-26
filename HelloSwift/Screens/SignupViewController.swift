@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController,signupViewProtocol {
 
     var myView: SignupView {return self.view as! SignupView}
     
     override func loadView() {
         super.loadView()
         view = SignupView.init(frame: UIScreen.main.bounds)
+        myView.delegate = self
     }
     
     override func viewDidLoad() {
@@ -27,4 +28,9 @@ class SignupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK:: SignupViewProtocol methods
+    
+    func didTapSignupButton() {
+        
+    }
 }

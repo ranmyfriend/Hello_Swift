@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
+protocol loginViewProtocol: class {
+    func didTapLoginButton()
+}
+
 class LoginView : UIView {
+    
+    weak var delegate: loginViewProtocol?
     
     var userNameTextField: UITextField?
     var passwordTextField: UITextField?

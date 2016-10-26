@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol signupViewProtocol: class {
+    func didTapSignupButton()
+}
+
 class SignupView: UIView {
 
+    var delegate: signupViewProtocol?
+    
     var userNameTextFiled: UITextField?
     var emailTextField: UITextField?
     var passwordTextField: UITextField?
@@ -52,6 +58,7 @@ class SignupView: UIView {
         self.submitButton?.setTitleColor(.white, for: .normal)
         self.submitButton?.titleLabel?.font = .systemFont(ofSize: 17)
         self.submitButton?.layer.cornerRadius = 4.0
+        self.submitButton?.addTarget(self, action: #selector(didTapSubmitButton), for: .touchUpInside)
         self.addSubview(self.submitButton!)
     }
     
@@ -70,6 +77,12 @@ class SignupView: UIView {
         self.passwordTextField?.frame = CGRect(x:leftInset, y:((self.emailTextField?.frame)?.maxY)!+20, width:avaialbleWidth, height:height)
         
         self.submitButton?.frame = CGRect(x:leftInset, y:((self.passwordTextField?.frame)?.maxY)!+50, width:avaialbleWidth, height:height)
+    }
+    
+    // MARK:: Selectors
+    
+    func didTapSubmitButton() {
+        self.delegate?.didTapSignupButton()
     }
 
 }

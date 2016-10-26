@@ -15,7 +15,7 @@ protocol DecisionViewProtocol : class {
 
 class DecisionView: UIView {
     
-    weak var delegate:DecisionViewProtocol?
+    weak var delegate: DecisionViewProtocol?
     
     var loginButton: UIButton?
     var signupButton: UIButton?
