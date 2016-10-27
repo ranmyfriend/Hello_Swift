@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol loginViewProtocol: class {
-    func didTapLoginButton()
+    func didTapSubmitButton()
 }
 
 class LoginView : UIView {
@@ -68,7 +68,14 @@ class LoginView : UIView {
         self.submitButton?.setTitleColor(.white, for: .normal)
         self.submitButton?.titleLabel?.font = .systemFont(ofSize: 17)
         self.submitButton?.layer.cornerRadius = 4.0
+        self.submitButton?.addTarget(self, action: #selector(didTapSubmitButton), for: .touchUpInside)
         self.addSubview(self.submitButton!)
+    }
+    
+    //MARK:: Selectors
+    
+    func didTapSubmitButton() {
+        self.delegate?.didTapSubmitButton()
     }
 }
 

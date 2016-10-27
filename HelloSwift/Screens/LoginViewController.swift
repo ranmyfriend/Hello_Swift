@@ -25,10 +25,11 @@ class LoginViewController : UIViewController,loginViewProtocol {
     
     //MARK:: LoginViewProtocol methods
     
-    func didTapLoginButton() {
+    func didTapSubmitButton() {
         let params: Dictionary<String,Any>? = ["key":"value"]
         let headers: Dictionary<String,Any>? = ["key":"value"]
-        FLDataCenter.sharedInstance .GET(endURL: "", parameters: params!
-            , headers: headers!)
+        FLDataCenter.sharedInstance .GET(connectingURL: "https://api.spotify.com/v1/tracks/3n3Ppam7vgaVa1iaRUc9Lp", parameters: params!, headers: headers! as! Dictionary<String, String>) { (response, responseObject, error) in
+            
+        }
     }
 }
