@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        self.setupBackEndLess()
         self.setupRootScene()
         return true
     }
@@ -48,7 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
+    
+    func setupBackEndLess() {
+        // MARK:: We are using REST API for BackEndLess
+        let baseURL = "https://api.backendless.com"
+        let versionNumber = "v1"
+        FLDataCenter.sharedInstance .setBaseDomain(domain: baseURL+"/"+versionNumber+"/")
+    }
 
+    //        let APP_ID = "5836E8FC-4A51-E65E-FF4B-E684B637F100"
+    //        let SECRET_KEY = "7A7C25DB-A1C2-5587-FF3E-CEC9B684CE00"
+    //        let VERSION_NUM = "v1"
+    //        let SERVER_HOST = "https://api.backendless.com"
+    
+    //        let backendless = Backendless.sharedInstance()
+    //        backendless?.hostURL = SERVER_HOST;
+    //        backendless?.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
+    
 //// MARK:: custom Getters
 //     @nonobjc var window : UIWindow? {
 //        get {

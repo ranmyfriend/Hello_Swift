@@ -9,7 +9,7 @@
 import UIKit
 
 class SignupViewController: UIViewController,signupViewProtocol {
-
+    
     var myView: SignupView {return self.view as! SignupView}
     
     override func loadView() {
@@ -22,7 +22,7 @@ class SignupViewController: UIViewController,signupViewProtocol {
         super.viewDidLoad()
         self.title = "Sign up"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,7 +30,23 @@ class SignupViewController: UIViewController,signupViewProtocol {
     
     // MARK:: SignupViewProtocol methods
     
-    func didTapSignupButton() {
+    func didTapSignupButton(userName: String?, email: String?, password: String?) {
         
+        if (email?.isEmpty)! {
+            self.showAlert(title: "Hello", message: "Please enter your fucking email id?")
+        }else if let check = email?.isEmail() , check == true {
+            self.showAlert(title: "Hello", message: "Are you sure is this Email?")
+        }else if(password?.isEmpty)! {
+            self.showAlert(title: "Hello", message: "Please enter your fucking email Password?")
+        }else {
+            SignUpDataCenter.sharedInstance.signup(userName: userName, email: email, password: password!){(response, responseObject, error) in
+                if (error != nil) {
+                    print("Server reported an error: \(error)")
+                }else {
+                    print("User has been registered (ASYNC): \(response)")
+                    
+                }
+            }
+        }
     }
 }

@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.0.1)
+  - Backendless-ios-SDK (3.0.43)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0.1)
+  - Backendless-ios-SDK
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Backendless-ios-SDK: b53ffb135b571af9526f01ea1a171e682b7b4d0b
 
-PODFILE CHECKSUM: 28cc9e1ba54f9af1000a9310039139d4defcf71a
+PODFILE CHECKSUM: 773230cc30a430f91bdbd0c56d9a7ffc089c6bb7
 
 COCOAPODS: 1.1.1

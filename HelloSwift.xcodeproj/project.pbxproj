@@ -14,6 +14,10 @@
 		072669B51DC0B18F0068B7DD /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AF1DC0B18F0068B7DD /* SignupView.swift */; };
 		072669B61DC0B18F0068B7DD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669B01DC0B18F0068B7DD /* SignupViewController.swift */; };
 		072669B81DC0B5270068B7DD /* FLDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669B71DC0B5270068B7DD /* FLDataCenter.swift */; };
+		07CB145A1DC326D8007356BE /* SignInDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB14591DC326D8007356BE /* SignInDataCenter.swift */; };
+		07CB145D1DC3271C007356BE /* SignUpDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB145C1DC3271C007356BE /* SignUpDataCenter.swift */; };
+		07E851381DC340BF0030C0E9 /* StringAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E851371DC340BF0030C0E9 /* StringAdditions.swift */; };
+		07E8513A1DC344950030C0E9 /* ViewControllerAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E851391DC344950030C0E9 /* ViewControllerAdditions.swift */; };
 		07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E1A1DBF490500A0632A /* AppDelegate.swift */; };
 		07FC6E221DBF490500A0632A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07FC6E211DBF490500A0632A /* Assets.xcassets */; };
 		07FC6E251DBF490500A0632A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07FC6E231DBF490500A0632A /* LaunchScreen.storyboard */; };
@@ -28,6 +32,11 @@
 		072669AF1DC0B18F0068B7DD /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupView.swift; path = Screens/SignupView.swift; sourceTree = "<group>"; };
 		072669B01DC0B18F0068B7DD /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Screens/SignupViewController.swift; sourceTree = "<group>"; };
 		072669B71DC0B5270068B7DD /* FLDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLDataCenter.swift; path = DataCenter/FLDataCenter.swift; sourceTree = "<group>"; };
+		07CB14561DC2A4C4007356BE /* HelloSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		07CB14591DC326D8007356BE /* SignInDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInDataCenter.swift; path = DataCenter/SignIn/SignInDataCenter.swift; sourceTree = "<group>"; };
+		07CB145C1DC3271C007356BE /* SignUpDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpDataCenter.swift; path = DataCenter/SignUp/SignUpDataCenter.swift; sourceTree = "<group>"; };
+		07E851371DC340BF0030C0E9 /* StringAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringAdditions.swift; path = Extensions/StringAdditions.swift; sourceTree = "<group>"; };
+		07E851391DC344950030C0E9 /* ViewControllerAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerAdditions.swift; path = Extensions/ViewControllerAdditions.swift; sourceTree = "<group>"; };
 		07FC6E171DBF490500A0632A /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FC6E1A1DBF490500A0632A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07FC6E211DBF490500A0632A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +62,8 @@
 		072669A91DC0B14E0068B7DD /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
+				07CB145B1DC32704007356BE /* SignUp */,
+				07CB14571DC3269D007356BE /* SignIn */,
 				072669B71DC0B5270068B7DD /* FLDataCenter.swift */,
 			);
 			name = DataCenter;
@@ -71,9 +82,35 @@
 			name = Screens;
 			sourceTree = "<group>";
 		};
+		07CB14571DC3269D007356BE /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				07CB14591DC326D8007356BE /* SignInDataCenter.swift */,
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		07CB145B1DC32704007356BE /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				07CB145C1DC3271C007356BE /* SignUpDataCenter.swift */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
+		07E851361DC340800030C0E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07E851371DC340BF0030C0E9 /* StringAdditions.swift */,
+				07E851391DC344950030C0E9 /* ViewControllerAdditions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		07FC6E0E1DBF490500A0632A = {
 			isa = PBXGroup;
 			children = (
+				07CB14561DC2A4C4007356BE /* HelloSwift-Bridging-Header.h */,
 				07FC6E191DBF490500A0632A /* HelloSwift */,
 				07FC6E181DBF490500A0632A /* Products */,
 				D9A6401C0C41FED00879BDCA /* Pods */,
@@ -92,6 +129,7 @@
 		07FC6E191DBF490500A0632A /* HelloSwift */ = {
 			isa = PBXGroup;
 			children = (
+				07E851361DC340800030C0E9 /* Extensions */,
 				072669A91DC0B14E0068B7DD /* DataCenter */,
 				072669AA1DC0B1560068B7DD /* Screens */,
 				07FC6E1A1DBF490500A0632A /* AppDelegate.swift */,
@@ -244,12 +282,16 @@
 			files = (
 				072669B51DC0B18F0068B7DD /* SignupView.swift in Sources */,
 				072669B61DC0B18F0068B7DD /* SignupViewController.swift in Sources */,
+				07E8513A1DC344950030C0E9 /* ViewControllerAdditions.swift in Sources */,
+				07E851381DC340BF0030C0E9 /* StringAdditions.swift in Sources */,
 				072669B81DC0B5270068B7DD /* FLDataCenter.swift in Sources */,
 				072669B11DC0B18F0068B7DD /* DecisionView.swift in Sources */,
 				072669B21DC0B18F0068B7DD /* DecisionViewController.swift in Sources */,
 				072669B31DC0B18F0068B7DD /* LoginView.swift in Sources */,
 				072669B41DC0B18F0068B7DD /* LoginViewController.swift in Sources */,
 				07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */,
+				07CB145D1DC3271C007356BE /* SignUpDataCenter.swift in Sources */,
+				07CB145A1DC326D8007356BE /* SignInDataCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,9 +410,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B76KMHZKZ7;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iTag.HelloSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -383,9 +427,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B76KMHZKZ7;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iTag.HelloSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HelloSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

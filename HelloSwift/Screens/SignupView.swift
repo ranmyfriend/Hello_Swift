@@ -9,7 +9,7 @@
 import UIKit
 
 protocol signupViewProtocol: class {
-    func didTapSignupButton()
+    func didTapSignupButton(userName:String?, email:String?, password:String?)
 }
 
 class SignupView: UIView {
@@ -30,13 +30,13 @@ class SignupView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func createViews() {
+   private func createViews() {
         
         self.backgroundColor = .white
         
         self.userNameTextFiled = UITextField()
         self.userNameTextFiled?.borderStyle = .roundedRect
-        self.userNameTextFiled?.placeholder = "User Name"
+        self.userNameTextFiled?.placeholder = "User Name(Optional)"
         self.userNameTextFiled?.keyboardType = .default
         self.addSubview(self.userNameTextFiled!)
         
@@ -81,8 +81,16 @@ class SignupView: UIView {
     
     // MARK:: Selectors
     
-    func didTapSubmitButton() {
-        self.delegate?.didTapSignupButton()
+    @objc private func didTapSubmitButton() {
+        self.delegate?.didTapSignupButton(userName: self.userNameTextFiled?.text, email: self.emailTextField?.text, password: self.passwordTextField?.text)
+    }
+    
+    // MARK:: Public Functions
+    
+    public func cleanup() {
+        self.userNameTextFiled?.text = nil
+        self.emailTextField?.text = nil
+        self.passwordTextField?.text = nil
     }
 
 }

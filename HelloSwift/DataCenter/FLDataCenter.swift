@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-typealias returnBlock = (URLResponse, Any?, Error?) -> Void
+typealias returnBlock = (URLResponse?, Any?, Error?) -> Void
 
 class FLDataCenter: NSObject {
     
@@ -26,18 +26,18 @@ class FLDataCenter: NSObject {
         self.baseURL = domain;
     }
     
- 
     func GET(connectingURL:String,
              parameters:Dictionary<String,Any>,
              headers:Dictionary<String,String>,
              ReturnBlock:@escaping returnBlock) {
         
-        if connectingURL.isEmpty {
+        let endURL = baseURL?.appending(connectingURL)
+        if (endURL?.isEmpty)! {
             print("Unable to connect to API.\nThe base url and the connecting url are empty. Use setDomain: method to set a base url or provide an endurl in this method call to connect to the API");
             return;
         }
         
-        Alamofire.request(connectingURL, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -58,12 +58,13 @@ class FLDataCenter: NSObject {
               headers:Dictionary<String,String>,
               ReturnBlock:@escaping returnBlock) {
         
-        if connectingURL.isEmpty {
+        let endURL = baseURL?.appending(connectingURL)
+        if (endURL?.isEmpty)! {
             print("Unable to connect to API.\nThe base url and the connecting url are empty. Use setDomain: method to set a base url or provide an endurl in this method call to connect to the API");
             return;
         }
         
-        Alamofire.request(connectingURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -119,7 +120,7 @@ class FLDataCenter: NSObject {
             return;
         }
         
-        Alamofire.request(connectingURL, method: .delete, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .delete, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -147,7 +148,7 @@ class FLDataCenter: NSObject {
             return;
         }
         
-        Alamofire.request(connectingURL, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -206,13 +207,17 @@ class FLDataCenter: NSObject {
                 multipartData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
             }
             
-            }, to: endURL!, encodingCompletion: {encodingResult in   switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    debugPrint(response)
-                }
-            case .failure(let encodingError):
-                print(encodingError)
+            }, to: endURL!, encodingCompletion: {encodingResult in
+                
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        debugPrint(response)
+                        ReturnBlock(response.response!,response.data,nil)
+                    }
+                case .failure(let encodingError):
+                    print(encodingError)
+                    ReturnBlock(nil,nil,encodingError)
                 }
         })
         
