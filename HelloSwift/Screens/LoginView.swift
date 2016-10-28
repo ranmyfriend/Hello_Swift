@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 protocol loginViewProtocol: class {
-    func didTapSubmitButton()
+    func didTapSubmitButton(email:String?, password:String?)
 }
 
 class LoginView : UIView {
     
     weak var delegate: loginViewProtocol?
     
-    var userNameTextField: UITextField?
+    var emailTextField: UITextField?
     var passwordTextField: UITextField?
     var submitButton: UIButton?
     
@@ -37,23 +37,23 @@ class LoginView : UIView {
         let padding: CGFloat = 20.0
         let availableWidth = self.bounds.size.width - (2*leftInset);
         
-        self.userNameTextField?.frame = CGRect(x:leftInset, y: topInset, width:availableWidth, height:height)
+        self.emailTextField?.frame = CGRect(x:leftInset, y: topInset, width:availableWidth, height:height)
         
-        self.passwordTextField?.frame = CGRect(x:leftInset, y:((self.userNameTextField?.frame)!.maxY+padding), width:availableWidth, height: height)
+        self.passwordTextField?.frame = CGRect(x:leftInset, y:((self.emailTextField?.frame)!.maxY+padding), width:availableWidth, height: height)
         
         self.submitButton?.frame = CGRect(x:leftInset, y:((self.passwordTextField?.frame)!.maxY+50), width:availableWidth, height:(height+10))
     }
     
-    func createViews() {
+   private func createViews() {
         
         self.backgroundColor = .white
         
-        self.userNameTextField = UITextField()
-        self.userNameTextField?.placeholder = "User Name"
-        self.userNameTextField?.font = .systemFont(ofSize: 15)
-        self.userNameTextField?.keyboardType = .emailAddress
-        self.userNameTextField?.borderStyle = .roundedRect
-        self.addSubview(self.userNameTextField!)
+        self.emailTextField = UITextField()
+        self.emailTextField?.placeholder = "Email"
+        self.emailTextField?.font = .systemFont(ofSize: 15)
+        self.emailTextField?.keyboardType = .emailAddress
+        self.emailTextField?.borderStyle = .roundedRect
+        self.addSubview(self.emailTextField!)
         
         self.passwordTextField = UITextField()
         self.passwordTextField?.placeholder = "Password"
@@ -74,8 +74,16 @@ class LoginView : UIView {
     
     //MARK:: Selectors
     
-    func didTapSubmitButton() {
-        self.delegate?.didTapSubmitButton()
+   @objc private func didTapSubmitButton() {
+        self.delegate?.didTapSubmitButton(email: self.emailTextField?.text, password: self.passwordTextField?.text)
     }
+    
+    //MARK:: Public Functions
+    
+    public func cleanup() {
+        self.emailTextField?.text = nil
+        self.passwordTextField?.text = nil
+    }
+    
 }
 

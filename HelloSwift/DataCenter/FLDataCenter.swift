@@ -28,7 +28,6 @@ class FLDataCenter: NSObject {
     
     func GET(connectingURL:String,
              parameters:Dictionary<String,Any>,
-             headers:Dictionary<String,String>,
              ReturnBlock:@escaping returnBlock) {
         
         let endURL = baseURL?.appending(connectingURL)
@@ -37,7 +36,7 @@ class FLDataCenter: NSObject {
             return;
         }
         
-        Alamofire.request(endURL!, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers()).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -55,7 +54,6 @@ class FLDataCenter: NSObject {
     
     func POST(connectingURL:String,
               parameters:Dictionary<String,Any>,
-              headers:Dictionary<String,String>,
               ReturnBlock:@escaping returnBlock) {
         
         let endURL = baseURL?.appending(connectingURL)
@@ -64,7 +62,7 @@ class FLDataCenter: NSObject {
             return;
         }
         
-        Alamofire.request(endURL!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers()).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -83,7 +81,6 @@ class FLDataCenter: NSObject {
     
     func PUT(connectingURL:String,
              parameters:Dictionary<String,Any>,
-             headers:Dictionary<String,String>,
              ReturnBlock:@escaping returnBlock) {
         
         let endURL = baseURL?.appending(connectingURL)
@@ -92,7 +89,7 @@ class FLDataCenter: NSObject {
             return;
         }
         
-        Alamofire.request(endURL!, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers()).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -111,7 +108,6 @@ class FLDataCenter: NSObject {
     
     func DELETE(connectingURL:String,
                 parameters:Dictionary<String,Any>,
-                headers:Dictionary<String,String>,
                 ReturnBlock:@escaping returnBlock) {
         
         let endURL = baseURL?.appending(connectingURL)
@@ -120,7 +116,7 @@ class FLDataCenter: NSObject {
             return;
         }
         
-        Alamofire.request(endURL!, method: .delete, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .delete, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers()).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -139,7 +135,6 @@ class FLDataCenter: NSObject {
     
     func PATCH(connectingURL:String,
                parameters:Dictionary<String,Any>,
-               headers:Dictionary<String,String>,
                ReturnBlock:@escaping returnBlock) {
         
         let endURL = baseURL?.appending(connectingURL)
@@ -148,7 +143,7 @@ class FLDataCenter: NSObject {
             return;
         }
         
-        Alamofire.request(endURL!, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON
+        Alamofire.request(endURL!, method: .patch, parameters: parameters, encoding: JSONEncoding.default, headers: self.headers()).responseJSON
             {
                 response in
                 switch(response.result) {
@@ -171,7 +166,6 @@ class FLDataCenter: NSObject {
               imageKey:String,
               mimeType:String,
               parameters:Dictionary<String,Any>,
-              headers:Dictionary<String,String>,
               ReturnBlock:@escaping returnBlock) {
         
         var mimeType = mimeType
@@ -221,6 +215,11 @@ class FLDataCenter: NSObject {
                 }
         })
         
+    }
+    
+    private func headers() -> Dictionary<String,String> {
+        let headers = ["application-id":"5836E8FC-4A51-E65E-FF4B-E684B637F100","secret-key":"7A7C25DB-A1C2-5587-FF3E-CEC9B684CE00","Content-Type":"application/json","application-type":"REST"]
+        return headers
     }
     
 }

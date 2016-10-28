@@ -25,11 +25,22 @@ class LoginViewController : UIViewController,loginViewProtocol {
     
     //MARK:: LoginViewProtocol methods
     
-    func didTapSubmitButton() {
-        let params: Dictionary<String,Any>? = ["key":"value"]
-        let headers: Dictionary<String,Any>? = ["key":"value"]
-        FLDataCenter.sharedInstance .GET(connectingURL: "https://api.spotify.com/v1/tracks/3n3Ppam7vgaVa1iaRUc9Lp", parameters: params!, headers: headers! as! Dictionary<String, String>) { (response, responseObject, error) in
-            
+    func didTapSubmitButton(email: String?, password: String?) {
+        if (email?.isEmpty)! {
+            self.showAlert(title: "Hello", message: "Please enter your fucking email id?")
+        }else if let check = email?.isEmail() , check == true {
+            self.showAlert(title: "Hello", message: "Are you sure is this Email?")
+        }else if(password?.isEmpty)! {
+            self.showAlert(title: "Hello", message: "Please enter your fucking email Password?")
+        }else {
+            SignInDataCenter.sharedInstance.signin(email: email, password: password!){(response, responseObject, error) in
+                if (error != nil) {
+                    print("Server reported an error: \(error)")
+                }else {
+                    self.myView.cleanup()
+                    print("User has been Logged in (ASYNC): \(response)")
+                }
+            }
         }
     }
 }

@@ -43,6 +43,7 @@ class SignupViewController: UIViewController,signupViewProtocol {
                 if (error != nil) {
                     print("Server reported an error: \(error)")
                 }else {
+                    self.myView.cleanup()
                     print("User has been registered (ASYNC): \(response)")
                     
                 }

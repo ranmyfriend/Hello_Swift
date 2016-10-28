@@ -26,14 +26,11 @@ class SignUpDataCenter: NSObject {
         parameters["email"] = email
         parameters["password"] = password
         parameters["name"] = userName
-        
-        let headers = ["application-id":"5836E8FC-4A51-E65E-FF4B-E684B637F100","secret-key":"7A7C25DB-A1C2-5587-FF3E-CEC9B684CE00","Content-Type":"application/json","application-type":"REST"]
-        
-        FLDataCenter.sharedInstance.POST(connectingURL: signupEndUrl, parameters: parameters, headers: headers) {
+                
+        FLDataCenter.sharedInstance.POST(connectingURL: signupEndUrl, parameters: parameters) {
             (urlResponse, urlResponseObject, error) in
             
             ReturnBlock(urlResponse,urlResponseObject,error)
-            
         }
     }
 }
