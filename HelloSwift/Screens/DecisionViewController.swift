@@ -6,9 +6,7 @@
 //  Copyright © 2016 Ranjith Kumar. All rights reserved.
 //
 
-import UIKit
-
-class DecisionViewController: UIViewController,DecisionViewProtocol {
+class DecisionViewController: BaseViewController,DecisionViewProtocol {
 
     // Note: We coult not directly override the self.view -> DecisionView
     // We are using computed property here. whenever you ask myView it will give you self.view as yourView.

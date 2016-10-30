@@ -6,14 +6,11 @@
 //  Copyright © 2016 Ranjith Kumar. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
 protocol loginViewProtocol: class {
     func didTapSubmitButton(email:String?, password:String?)
 }
 
-class LoginView : UIView {
+class LoginView : BaseView {
     
     weak var delegate: loginViewProtocol?
     

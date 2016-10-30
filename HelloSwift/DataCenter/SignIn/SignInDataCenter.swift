@@ -21,7 +21,7 @@ class SignInDataCenter: NSObject {
         
         let signinEndUrl = "users/login"
         
-        var parameters = Dictionary<String,String>()
+        var parameters = Dictionary<String,Any>()
         
         parameters["login"] = email
         parameters["password"] = password

@@ -6,14 +6,12 @@
 //  Copyright © 2016 Ranjith Kumar. All rights reserved.
 //
 
-import UIKit
-
 protocol DecisionViewProtocol : class {
     func didTapLoginButton()
     func didTapSignupButton()
 }
 
-class DecisionView: UIView {
+class DecisionView: BaseView {
     
     weak var delegate: DecisionViewProtocol?
     
@@ -37,16 +35,18 @@ class DecisionView: UIView {
         self.loginButton?.backgroundColor = .red
         self.loginButton?.setTitle("User -> Login", for: .normal)
         self.loginButton?.setTitleColor(.white, for: .normal)
-        self.loginButton?.titleLabel?.font = .systemFont(ofSize: 17)
+        self.loginButton?.titleLabel?.font = .boldSystemFont(ofSize: 17)
         self.loginButton?.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        self.loginButton?.titleLabel?.textAlignment = .center
         self.addSubview(self.loginButton!)
         
         self.signupButton = UIButton()
         self.signupButton?.backgroundColor = .red
         self.signupButton?.setTitle("User -> Signup", for: .normal)
         self.signupButton?.setTitleColor(.white, for: .normal)
-        self.signupButton?.titleLabel?.font = .systemFont(ofSize: 17)
+        self.signupButton?.titleLabel?.font = .boldSystemFont(ofSize: 17)
         self.signupButton?.addTarget(self, action: #selector(didTapSignupButton), for: .touchUpInside)
+        self.signupButton?.titleLabel?.textAlignment = .center
         self.addSubview(self.signupButton!)
     }
     

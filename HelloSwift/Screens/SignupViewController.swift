@@ -6,9 +6,7 @@
 //  Copyright © 2016 Ranjith Kumar. All rights reserved.
 //
 
-import UIKit
-
-class SignupViewController: UIViewController,signupViewProtocol {
+class SignupViewController: BaseViewController,signupViewProtocol {
     
     var myView: SignupView {return self.view as! SignupView}
     

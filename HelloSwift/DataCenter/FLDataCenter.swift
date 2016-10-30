@@ -27,7 +27,7 @@ class FLDataCenter: NSObject {
     }
     
     func GET(connectingURL:String,
-             parameters:Dictionary<String,Any>,
+             parameters:Dictionary<String,Any>?,
              ReturnBlock:@escaping returnBlock) {
         
         let endURL = baseURL?.appending(connectingURL)

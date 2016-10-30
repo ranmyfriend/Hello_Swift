@@ -6,9 +6,7 @@
 //  Copyright © 2016 Ranjith Kumar. All rights reserved.
 //
 
-import UIKit
-
-class LoginViewController : UIViewController,loginViewProtocol {
+class LoginViewController : BaseViewController,loginViewProtocol {
     
     var myView: LoginView! { return self.view as! LoginView }
 

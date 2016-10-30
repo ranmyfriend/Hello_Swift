@@ -6,13 +6,11 @@
 //  Copyright © 2016 Ranjith Kumar. All rights reserved.
 //
 
-import UIKit
-
 protocol signupViewProtocol: class {
     func didTapSignupButton(userName:String?, email:String?, password:String?)
 }
 
-class SignupView: UIView {
+class SignupView: BaseView {
 
     var delegate: signupViewProtocol?
     

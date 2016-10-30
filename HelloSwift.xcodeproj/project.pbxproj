@@ -14,8 +14,19 @@
 		072669B51DC0B18F0068B7DD /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AF1DC0B18F0068B7DD /* SignupView.swift */; };
 		072669B61DC0B18F0068B7DD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669B01DC0B18F0068B7DD /* SignupViewController.swift */; };
 		072669B81DC0B5270068B7DD /* FLDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669B71DC0B5270068B7DD /* FLDataCenter.swift */; };
+		0764234A1DC6067D00EFC325 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076423481DC6067D00EFC325 /* Data.swift */; };
+		0764234B1DC6067D00EFC325 /* FetchNotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076423491DC6067D00EFC325 /* FetchNotesResponse.swift */; };
+		0764234D1DC60F1500EFC325 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0764234C1DC60F1500EFC325 /* HomeCell.swift */; };
+		078C358B1DC37530007233A6 /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C358A1DC37530007233A6 /* AddNotesViewController.swift */; };
+		078C358D1DC3754C007233A6 /* AddNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C358C1DC3754C007233A6 /* AddNotesView.swift */; };
+		078C35901DC394FD007233A6 /* NotesActionsDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C358F1DC394FD007233A6 /* NotesActionsDataCenter.swift */; };
 		07CB145A1DC326D8007356BE /* SignInDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB14591DC326D8007356BE /* SignInDataCenter.swift */; };
 		07CB145D1DC3271C007356BE /* SignUpDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CB145C1DC3271C007356BE /* SignUpDataCenter.swift */; };
+		07D973E81DC35F6500F810E1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D973E71DC35F6500F810E1 /* BaseViewController.swift */; };
+		07D973EA1DC35F8500F810E1 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D973E91DC35F8500F810E1 /* BaseNavigationViewController.swift */; };
+		07D973EC1DC35F9900F810E1 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D973EB1DC35F9900F810E1 /* BaseView.swift */; };
+		07D973EE1DC3612700F810E1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D973ED1DC3612700F810E1 /* HomeViewController.swift */; };
+		07D973F01DC3614300F810E1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D973EF1DC3614300F810E1 /* HomeView.swift */; };
 		07E851381DC340BF0030C0E9 /* StringAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E851371DC340BF0030C0E9 /* StringAdditions.swift */; };
 		07E8513A1DC344950030C0E9 /* ViewControllerAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E851391DC344950030C0E9 /* ViewControllerAdditions.swift */; };
 		07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FC6E1A1DBF490500A0632A /* AppDelegate.swift */; };
@@ -32,9 +43,20 @@
 		072669AF1DC0B18F0068B7DD /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupView.swift; path = Screens/SignupView.swift; sourceTree = "<group>"; };
 		072669B01DC0B18F0068B7DD /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = Screens/SignupViewController.swift; sourceTree = "<group>"; };
 		072669B71DC0B5270068B7DD /* FLDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLDataCenter.swift; path = DataCenter/FLDataCenter.swift; sourceTree = "<group>"; };
+		076423481DC6067D00EFC325 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = DataCenter/Models/Data.swift; sourceTree = "<group>"; };
+		076423491DC6067D00EFC325 /* FetchNotesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchNotesResponse.swift; path = DataCenter/Models/FetchNotesResponse.swift; sourceTree = "<group>"; };
+		0764234C1DC60F1500EFC325 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCell.swift; path = Screens/HomeCell.swift; sourceTree = "<group>"; };
+		078C358A1DC37530007233A6 /* AddNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNotesViewController.swift; path = Screens/AddNotesViewController.swift; sourceTree = "<group>"; };
+		078C358C1DC3754C007233A6 /* AddNotesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNotesView.swift; path = Screens/AddNotesView.swift; sourceTree = "<group>"; };
+		078C358F1DC394FD007233A6 /* NotesActionsDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesActionsDataCenter.swift; path = DataCenter/Notes/NotesActionsDataCenter.swift; sourceTree = "<group>"; };
 		07CB14561DC2A4C4007356BE /* HelloSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HelloSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		07CB14591DC326D8007356BE /* SignInDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInDataCenter.swift; path = DataCenter/SignIn/SignInDataCenter.swift; sourceTree = "<group>"; };
 		07CB145C1DC3271C007356BE /* SignUpDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpDataCenter.swift; path = DataCenter/SignUp/SignUpDataCenter.swift; sourceTree = "<group>"; };
+		07D973E71DC35F6500F810E1 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Modules/Base/BaseViewController.swift; sourceTree = "<group>"; };
+		07D973E91DC35F8500F810E1 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseNavigationViewController.swift; path = Modules/Base/BaseNavigationViewController.swift; sourceTree = "<group>"; };
+		07D973EB1DC35F9900F810E1 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = Modules/Base/BaseView.swift; sourceTree = "<group>"; };
+		07D973ED1DC3612700F810E1 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Screens/HomeViewController.swift; sourceTree = "<group>"; };
+		07D973EF1DC3614300F810E1 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Screens/HomeView.swift; sourceTree = "<group>"; };
 		07E851371DC340BF0030C0E9 /* StringAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringAdditions.swift; path = Extensions/StringAdditions.swift; sourceTree = "<group>"; };
 		07E851391DC344950030C0E9 /* ViewControllerAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerAdditions.swift; path = Extensions/ViewControllerAdditions.swift; sourceTree = "<group>"; };
 		07FC6E171DBF490500A0632A /* HelloSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +84,8 @@
 		072669A91DC0B14E0068B7DD /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
+				076423471DC6065800EFC325 /* Models */,
+				078C358E1DC394CC007233A6 /* Notes */,
 				07CB145B1DC32704007356BE /* SignUp */,
 				07CB14571DC3269D007356BE /* SignIn */,
 				072669B71DC0B5270068B7DD /* FLDataCenter.swift */,
@@ -78,8 +102,30 @@
 				072669AE1DC0B18F0068B7DD /* LoginViewController.swift */,
 				072669AF1DC0B18F0068B7DD /* SignupView.swift */,
 				072669B01DC0B18F0068B7DD /* SignupViewController.swift */,
+				07D973ED1DC3612700F810E1 /* HomeViewController.swift */,
+				0764234C1DC60F1500EFC325 /* HomeCell.swift */,
+				07D973EF1DC3614300F810E1 /* HomeView.swift */,
+				078C358A1DC37530007233A6 /* AddNotesViewController.swift */,
+				078C358C1DC3754C007233A6 /* AddNotesView.swift */,
 			);
 			name = Screens;
+			sourceTree = "<group>";
+		};
+		076423471DC6065800EFC325 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				076423481DC6067D00EFC325 /* Data.swift */,
+				076423491DC6067D00EFC325 /* FetchNotesResponse.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		078C358E1DC394CC007233A6 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				078C358F1DC394FD007233A6 /* NotesActionsDataCenter.swift */,
+			);
+			name = Notes;
 			sourceTree = "<group>";
 		};
 		07CB14571DC3269D007356BE /* SignIn */ = {
@@ -96,6 +142,24 @@
 				07CB145C1DC3271C007356BE /* SignUpDataCenter.swift */,
 			);
 			name = SignUp;
+			sourceTree = "<group>";
+		};
+		07D973E51DC35F1C00F810E1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				07D973E61DC35F4200F810E1 /* Base */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		07D973E61DC35F4200F810E1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				07D973EB1DC35F9900F810E1 /* BaseView.swift */,
+				07D973E71DC35F6500F810E1 /* BaseViewController.swift */,
+				07D973E91DC35F8500F810E1 /* BaseNavigationViewController.swift */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		07E851361DC340800030C0E9 /* Extensions */ = {
@@ -129,6 +193,7 @@
 		07FC6E191DBF490500A0632A /* HelloSwift */ = {
 			isa = PBXGroup;
 			children = (
+				07D973E51DC35F1C00F810E1 /* Modules */,
 				07E851361DC340800030C0E9 /* Extensions */,
 				072669A91DC0B14E0068B7DD /* DataCenter */,
 				072669AA1DC0B1560068B7DD /* Screens */,
@@ -280,16 +345,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07D973E81DC35F6500F810E1 /* BaseViewController.swift in Sources */,
 				072669B51DC0B18F0068B7DD /* SignupView.swift in Sources */,
 				072669B61DC0B18F0068B7DD /* SignupViewController.swift in Sources */,
+				0764234B1DC6067D00EFC325 /* FetchNotesResponse.swift in Sources */,
 				07E8513A1DC344950030C0E9 /* ViewControllerAdditions.swift in Sources */,
+				0764234D1DC60F1500EFC325 /* HomeCell.swift in Sources */,
 				07E851381DC340BF0030C0E9 /* StringAdditions.swift in Sources */,
+				07D973F01DC3614300F810E1 /* HomeView.swift in Sources */,
+				07D973EA1DC35F8500F810E1 /* BaseNavigationViewController.swift in Sources */,
+				0764234A1DC6067D00EFC325 /* Data.swift in Sources */,
 				072669B81DC0B5270068B7DD /* FLDataCenter.swift in Sources */,
 				072669B11DC0B18F0068B7DD /* DecisionView.swift in Sources */,
 				072669B21DC0B18F0068B7DD /* DecisionViewController.swift in Sources */,
 				072669B31DC0B18F0068B7DD /* LoginView.swift in Sources */,
 				072669B41DC0B18F0068B7DD /* LoginViewController.swift in Sources */,
+				078C35901DC394FD007233A6 /* NotesActionsDataCenter.swift in Sources */,
+				07D973EE1DC3612700F810E1 /* HomeViewController.swift in Sources */,
 				07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */,
+				078C358D1DC3754C007233A6 /* AddNotesView.swift in Sources */,
+				078C358B1DC37530007233A6 /* AddNotesViewController.swift in Sources */,
+				07D973EC1DC35F9900F810E1 /* BaseView.swift in Sources */,
 				07CB145D1DC3271C007356BE /* SignUpDataCenter.swift in Sources */,
 				07CB145A1DC326D8007356BE /* SignInDataCenter.swift in Sources */,
 			);
