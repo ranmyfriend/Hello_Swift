@@ -48,7 +48,7 @@ class BaseView: UIView {
         if(self.loadingView == nil) {
             self.loadingView = ALLoadingView()
         }
-        self.loadingView?.frame = CGRect(x:0, y:0, width:UIScreen.main.bounds.width, height:UIScreen.main.bounds.height)
+        self.loadingView?.frame = CGRect(x:0, y:0, width:Constants.SCREEN_WIDTH, height:Constants.SCREEN_HEIGHT)
         self.loadingView?.backgroundColor = UIColor.rgba(fromHex: 0x000, alpha: 0.6)
         if(!(UIApplication.shared.keyWindow?.subviews.contains(self.loadingView!))!) {
             UIApplication.shared.keyWindow?.addSubview(self.loadingView!)

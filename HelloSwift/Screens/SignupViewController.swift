@@ -37,7 +37,9 @@ class SignupViewController: BaseViewController,signupViewProtocol {
         }else if(password?.isEmpty)! {
             self.showAlert(title: "Hello", message: "Please enter your fucking email Password?")
         }else {
+            self.myView.showLoadingViewWithMessage(message: Constants.pleaseWaitCaption)
             SignUpDataCenter.sharedInstance.signup(userName: userName, email: email, password: password!){(response, responseObject, error) in
+                self.myView.hideLoadingView()
                 if (error != nil) {
                     print("Server reported an error: \(error)")
                 }else {

@@ -71,7 +71,7 @@ class HomeCell: UITableViewCell {
     
     // MARK:: Private Functions
     private func createViews() {
-      self.availableWidth = UIScreen.main.bounds.width - (2*leftInset)
+      self.availableWidth = Constants.SCREEN_WIDTH - (2*leftInset)
 
         self.createdAt = UILabel.init(frame: CGRect(x:leftInset, y:topInset, width:availableWidth!, height:dummyHeight))
         self.createdAt?.font = .appThemeRegularFontWithSize(size: 13)

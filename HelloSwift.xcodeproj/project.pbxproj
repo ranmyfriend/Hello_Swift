@@ -48,6 +48,11 @@
 		071CC4F31DC71693009D5C27 /* ALHudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC4F21DC71693009D5C27 /* ALHudView.swift */; };
 		071CC4F51DC724AF009D5C27 /* ALLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC4F41DC724AF009D5C27 /* ALLoadingCell.swift */; };
 		071CC4FE1DC73BEB009D5C27 /* Font+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC4FD1DC73BEB009D5C27 /* Font+CustomFont.swift */; };
+		071CC5731DC75945009D5C27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC5721DC75945009D5C27 /* Constants.swift */; };
+		071CC5751DC77C2F009D5C27 /* ALTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC5741DC77C2F009D5C27 /* ALTextField.swift */; };
+		071CC5771DC79A70009D5C27 /* ALLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC5761DC79A70009D5C27 /* ALLabel.swift */; };
+		071CC5791DC79C79009D5C27 /* ALInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC5781DC79C79009D5C27 /* ALInputTextView.swift */; };
+		071CC57B1DC7A300009D5C27 /* ALImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC57A1DC7A300009D5C27 /* ALImagePicker.swift */; };
 		072669B11DC0B18F0068B7DD /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AB1DC0B18F0068B7DD /* DecisionView.swift */; };
 		072669B21DC0B18F0068B7DD /* DecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AC1DC0B18F0068B7DD /* DecisionViewController.swift */; };
 		072669B31DC0B18F0068B7DD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AD1DC0B18F0068B7DD /* LoginView.swift */; };
@@ -155,6 +160,11 @@
 		071CC4F21DC71693009D5C27 /* ALHudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALHudView.swift; path = Modules/UIComponents/ALHudView.swift; sourceTree = "<group>"; };
 		071CC4F41DC724AF009D5C27 /* ALLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALLoadingCell.swift; path = Modules/UIComponents/ALLoadingCell.swift; sourceTree = "<group>"; };
 		071CC4FD1DC73BEB009D5C27 /* Font+CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Font+CustomFont.swift"; path = "Extensions/Font+CustomFont.swift"; sourceTree = "<group>"; };
+		071CC5721DC75945009D5C27 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Modules/Helper/Constants.swift; sourceTree = "<group>"; };
+		071CC5741DC77C2F009D5C27 /* ALTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALTextField.swift; path = Modules/UIComponents/ALTextField.swift; sourceTree = "<group>"; };
+		071CC5761DC79A70009D5C27 /* ALLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALLabel.swift; path = Modules/UIComponents/ALLabel.swift; sourceTree = "<group>"; };
+		071CC5781DC79C79009D5C27 /* ALInputTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALInputTextView.swift; path = Modules/UIComponents/ALInputTextView.swift; sourceTree = "<group>"; };
+		071CC57A1DC7A300009D5C27 /* ALImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALImagePicker.swift; path = Modules/UIComponents/ALImagePicker.swift; sourceTree = "<group>"; };
 		072669AB1DC0B18F0068B7DD /* DecisionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecisionView.swift; path = Screens/DecisionView.swift; sourceTree = "<group>"; };
 		072669AC1DC0B18F0068B7DD /* DecisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecisionViewController.swift; path = Screens/DecisionViewController.swift; sourceTree = "<group>"; };
 		072669AD1DC0B18F0068B7DD /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Screens/LoginView.swift; sourceTree = "<group>"; };
@@ -312,6 +322,10 @@
 				071CC4ED1DC6FBDC009D5C27 /* ALLoadingView.swift */,
 				071CC4F21DC71693009D5C27 /* ALHudView.swift */,
 				071CC4F41DC724AF009D5C27 /* ALLoadingCell.swift */,
+				071CC5741DC77C2F009D5C27 /* ALTextField.swift */,
+				071CC5781DC79C79009D5C27 /* ALInputTextView.swift */,
+				071CC5761DC79A70009D5C27 /* ALLabel.swift */,
+				071CC57A1DC7A300009D5C27 /* ALImagePicker.swift */,
 			);
 			name = UIComponents;
 			sourceTree = "<group>";
@@ -319,6 +333,7 @@
 		071CC4FC1DC73B84009D5C27 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				071CC5721DC75945009D5C27 /* Constants.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -602,6 +617,7 @@
 				0764234B1DC6067D00EFC325 /* FetchNotesResponse.swift in Sources */,
 				071CC4D81DC6FB1E009D5C27 /* DGActivityIndicatorBallTrianglePathAnimation.m in Sources */,
 				071CC4D61DC6FB1E009D5C27 /* DGActivityIndicatorBallScaleRippleMultipleAnimation.m in Sources */,
+				071CC5751DC77C2F009D5C27 /* ALTextField.swift in Sources */,
 				07E8513A1DC344950030C0E9 /* ViewController+Alerts.swift in Sources */,
 				071CC4E81DC6FB1E009D5C27 /* DGActivityIndicatorTriplePulseAnimation.m in Sources */,
 				071CC4E11DC6FB1E009D5C27 /* DGActivityIndicatorLineScalePulseOutRapidAnimation.m in Sources */,
@@ -612,6 +628,7 @@
 				07D973EA1DC35F8500F810E1 /* BaseNavigationViewController.swift in Sources */,
 				071CC4D91DC6FB1E009D5C27 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				0764234A1DC6067D00EFC325 /* Data.swift in Sources */,
+				071CC5731DC75945009D5C27 /* Constants.swift in Sources */,
 				071CC4EA1DC6FB1E009D5C27 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				071CC4DD1DC6FB1E009D5C27 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				072669B81DC0B5270068B7DD /* FLDataCenter.swift in Sources */,
@@ -619,6 +636,7 @@
 				071CC4EB1DC6FB1E009D5C27 /* DGActivityIndicatorView.m in Sources */,
 				071CC4F51DC724AF009D5C27 /* ALLoadingCell.swift in Sources */,
 				072669B21DC0B18F0068B7DD /* DecisionViewController.swift in Sources */,
+				071CC5791DC79C79009D5C27 /* ALInputTextView.swift in Sources */,
 				071CC4D41DC6FB1E009D5C27 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
 				071CC4C81DC6FB1E009D5C27 /* DACircularProgressView.m in Sources */,
 				071CC4CB1DC6FB1E009D5C27 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
@@ -629,7 +647,9 @@
 				078C35901DC394FD007233A6 /* NotesActionsDataCenter.swift in Sources */,
 				07D973EE1DC3612700F810E1 /* HomeViewController.swift in Sources */,
 				07FC6E1B1DBF490500A0632A /* AppDelegate.swift in Sources */,
+				071CC57B1DC7A300009D5C27 /* ALImagePicker.swift in Sources */,
 				071CC4DE1DC6FB1E009D5C27 /* DGActivityIndicatorLineScaleAnimation.m in Sources */,
+				071CC5771DC79A70009D5C27 /* ALLabel.swift in Sources */,
 				071CC4E91DC6FB1E009D5C27 /* DGActivityIndicatorTripleRingsAnimation.m in Sources */,
 				071CC4C91DC6FB1E009D5C27 /* DALabeledCircularProgressView.m in Sources */,
 				071CC4E61DC6FB1E009D5C27 /* DGActivityIndicatorThreeDotsAnimation.m in Sources */,

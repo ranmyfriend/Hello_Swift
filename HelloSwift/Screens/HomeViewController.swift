@@ -50,7 +50,7 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     }
     
     func fetchNotes() {
-        self.myView.showLoadingViewWithMessage(message: "Fetching Notes...")
+        self.myView.showLoadingViewWithMessage(message: Constants.fetchNotesCaption)
         NotesActionsDataCenter.sharedInstance.fetchNotes { (urlResponse, responseObject, error) in
             self.myView.hideLoadingView()
             if(error != nil) {
