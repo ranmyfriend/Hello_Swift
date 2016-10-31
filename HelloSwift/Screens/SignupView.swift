@@ -54,7 +54,7 @@ class SignupView: BaseView {
         self.submitButton?.backgroundColor = .black
         self.submitButton?.setTitle("Submit", for: .normal)
         self.submitButton?.setTitleColor(.white, for: .normal)
-        self.submitButton?.titleLabel?.font = .systemFont(ofSize: 17)
+        self.submitButton?.titleLabel?.font = .appThemeRegularFontWithSize(size: 17)
         self.submitButton?.layer.cornerRadius = 4.0
         self.submitButton?.addTarget(self, action: #selector(didTapSubmitButton), for: .touchUpInside)
         self.addSubview(self.submitButton!)

@@ -13,6 +13,7 @@ class HomeCell: UITableViewCell {
     var titleLabel: UILabel?
     var bodyTextView: UITextView?
     var createdAt: UILabel?
+    var separatorView: UIView?
     
     let topInset: CGFloat = 5.0
     let leftInset: CGFloat = 20.0
@@ -57,13 +58,15 @@ class HomeCell: UITableViewCell {
         
         self.bodyTextView?.sizeToFit()
         self.bodyTextView?.frame = CGRect(x:leftInset, y:(self.titleLabel?.frame.maxY)!+padding, width:availableWidth!, height:((self.bodyTextView?.frame.height)!))
+        
+        self.separatorView?.frame = CGRect(x:leftInset, y:(self.bodyTextView?.frame.maxY)!+5,width:availableWidth!,height:1)
     }
     
     func getHeight() -> CGFloat {
         let createdAtHeight = self.topInset + (self.createdAt?.frame.height)! + padding
         let titleHeight = (self.titleLabel?.frame.height)! + padding
         let bodyHeight = (self.titleLabel?.frame.height)! + padding
-        return createdAtHeight + titleHeight + bodyHeight
+        return createdAtHeight + titleHeight + bodyHeight + 5 + 1
     }
     
     // MARK:: Private Functions
@@ -71,19 +74,24 @@ class HomeCell: UITableViewCell {
       self.availableWidth = UIScreen.main.bounds.width - (2*leftInset)
 
         self.createdAt = UILabel.init(frame: CGRect(x:leftInset, y:topInset, width:availableWidth!, height:dummyHeight))
-        self.createdAt?.font = UIFont.systemFont(ofSize: 13)
+        self.createdAt?.font = .appThemeRegularFontWithSize(size: 13)
         self.createdAt?.textAlignment = .right
         self.addSubview(self.createdAt!)
         
         self.titleLabel = UILabel.init(frame: CGRect(x:leftInset, y:topInset, width:availableWidth!+20, height:dummyHeight))
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        self.titleLabel?.font = .appThemeRegularFontWithSize(size: 15)
         self.titleLabel?.textColor = .blue
         self.addSubview(self.titleLabel!)
 
         self.bodyTextView = UITextView.init(frame: CGRect(x:leftInset, y:(self.titleLabel?.frame.maxY)!+20, width:availableWidth!, height:dummyHeight))
-        self.bodyTextView?.font = UIFont.systemFont(ofSize: 17)
+        self.bodyTextView?.font = .appThemeRegularFontWithSize(size: 17)
         self.bodyTextView?.textColor = .black
         self.addSubview(self.bodyTextView!)
+        
+        self.separatorView = UIView.init(frame: CGRect(x:leftInset, y:(self.bodyTextView?.frame.maxY)!+5,width:availableWidth!,height:1))
+        self.separatorView?.backgroundColor = .lightGray
+        self.addSubview(self.separatorView!)
+        
     }
     
     

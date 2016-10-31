@@ -34,13 +34,13 @@ class AddNotesView: BaseView {
         self.titleTextField = UITextField()
         self.titleTextField?.borderStyle = .roundedRect
         self.titleTextField?.placeholder = "Title"
-        self.titleTextField?.font = .boldSystemFont(ofSize: 15)
+        self.titleTextField?.font = .appThemeBoldFontWithSize(size: 15)
         self.addSubview(self.titleTextField!)
         
         self.bodyTextView = UITextView()
         self.bodyTextView?.layer.cornerRadius = 4.0
         self.bodyTextView?.clipsToBounds = true
-        self.bodyTextView?.font = .systemFont(ofSize: 15)
+        self.bodyTextView?.font = .appThemeRegularFontWithSize(size: 15)
         self.bodyTextView?.layer.borderColor = UIColor.lightGray.cgColor
         self.bodyTextView?.layer.borderWidth = 0.5
         self.addSubview(self.bodyTextView!)
@@ -51,7 +51,7 @@ class AddNotesView: BaseView {
         self.saveButton?.layer.cornerRadius = 4.0
         self.saveButton?.setTitleColor(.white, for: .normal)
         self.saveButton?.backgroundColor = .blue
-        self.saveButton?.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        self.saveButton?.titleLabel?.font = .appThemeBoldFontWithSize(size: 17)
         self.saveButton?.titleLabel?.textAlignment = .center
         self.addSubview(self.saveButton!)
     }

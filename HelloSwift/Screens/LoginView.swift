@@ -47,14 +47,14 @@ class LoginView : BaseView {
         
         self.emailTextField = UITextField()
         self.emailTextField?.placeholder = "Email"
-        self.emailTextField?.font = .systemFont(ofSize: 15)
+        self.emailTextField?.font = .appThemeRegularFontWithSize(size: 15)
         self.emailTextField?.keyboardType = .emailAddress
         self.emailTextField?.borderStyle = .roundedRect
         self.addSubview(self.emailTextField!)
         
         self.passwordTextField = UITextField()
         self.passwordTextField?.placeholder = "Password"
-        self.passwordTextField?.font = .systemFont(ofSize: 15)
+        self.passwordTextField?.font = .appThemeRegularFontWithSize(size: 15)
         self.passwordTextField?.keyboardType = .default
         self.passwordTextField?.borderStyle = .roundedRect
         self.addSubview(self.passwordTextField!)
@@ -63,7 +63,7 @@ class LoginView : BaseView {
         self.submitButton?.backgroundColor = .black
         self.submitButton?.setTitle("Submit", for: .normal)
         self.submitButton?.setTitleColor(.white, for: .normal)
-        self.submitButton?.titleLabel?.font = .systemFont(ofSize: 17)
+        self.submitButton?.titleLabel?.font = .appThemeRegularFontWithSize(size: 17)
         self.submitButton?.layer.cornerRadius = 4.0
         self.submitButton?.addTarget(self, action: #selector(didTapSubmitButton), for: .touchUpInside)
         self.addSubview(self.submitButton!)

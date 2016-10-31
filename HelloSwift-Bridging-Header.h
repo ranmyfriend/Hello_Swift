@@ -10,5 +10,7 @@
 #define HelloSwift_Bridging_Header_h
 
 #import "Backendless.h"
+#import "DGActivityIndicatorView.h"
+#import "DACircularProgressView.h"
 
 #endif /* HelloSwift_Bridging_Header_h */

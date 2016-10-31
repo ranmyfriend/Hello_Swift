@@ -4,6 +4,5 @@ use_frameworks!
 
 target 'HelloSwift' do
     pod 'Alamofire', '~> 4.0.1'
-    pod 'Backendless-ios-SDK'
     pod 'SwiftyJSON', '~> 3.1'
 end

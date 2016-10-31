@@ -24,10 +24,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## Backendless-ios-SDK
-
-Copyright (c) 2012-2016 by Backendless.com
-
 ## SwiftyJSON
 
 The MIT License (MIT)

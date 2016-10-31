@@ -1,0 +1,82 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/Data.swift",
+      "line": 11,
+      "symbol": "Data",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/Data.swift",
+      "line": 22,
+      "symbol": "Data.meta",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/Data.swift",
+      "line": 23,
+      "symbol": "Data.class_",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/Data.swift",
+      "line": 24,
+      "symbol": "Data.created",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/Data.swift",
+      "line": 25,
+      "symbol": "Data.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/Data.swift",
+      "line": 26,
+      "symbol": "Data.objectId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/Data.swift",
+      "line": 27,
+      "symbol": "Data.body",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/FetchNotesResponse.swift",
+      "line": 11,
+      "symbol": "FetchNotesResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/FetchNotesResponse.swift",
+      "line": 19,
+      "symbol": "FetchNotesResponse.totalObjects",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/FetchNotesResponse.swift",
+      "line": 20,
+      "symbol": "FetchNotesResponse.offset",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ranjit/workspace/Personal/Git/HelloSwift/HelloSwift/DataCenter/Models/FetchNotesResponse.swift",
+      "line": 21,
+      "symbol": "FetchNotesResponse.data",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/ranjit/workspace/Personal/Git/HelloSwift"
+}
