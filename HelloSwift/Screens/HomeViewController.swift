@@ -20,6 +20,7 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.title = "Home"
         if(self.navigationItem.rightBarButtonItem == nil) {
             let addNoteBarButton = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(didTapAddNotesButton))
             self.navigationItem.rightBarButtonItem = addNoteBarButton
@@ -30,11 +31,6 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
         super.viewDidLoad()
         self.fetchNotes()
         self.myView.tableView?.register(HomeCell.self, forCellReuseIdentifier:HomeCell.useIdentifier())
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.title = "Home"
     }
 
     override func didReceiveMemoryWarning() {

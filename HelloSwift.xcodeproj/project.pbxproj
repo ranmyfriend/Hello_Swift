@@ -53,6 +53,16 @@
 		071CC5771DC79A70009D5C27 /* ALLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC5761DC79A70009D5C27 /* ALLabel.swift */; };
 		071CC5791DC79C79009D5C27 /* ALInputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC5781DC79C79009D5C27 /* ALInputTextView.swift */; };
 		071CC57B1DC7A300009D5C27 /* ALImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071CC57A1DC7A300009D5C27 /* ALImagePicker.swift */; };
+		071CC5891DC7D76E009D5C27 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC57F1DC7D76E009D5C27 /* ProximaNova-Bold.otf */; };
+		071CC58A1DC7D76E009D5C27 /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5801DC7D76E009D5C27 /* ProximaNova-Light.otf */; };
+		071CC58B1DC7D76E009D5C27 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5811DC7D76E009D5C27 /* ProximaNova-Regular.otf */; };
+		071CC58C1DC7D76E009D5C27 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5821DC7D76E009D5C27 /* ProximaNova-Semibold.otf */; };
+		071CC58D1DC7D76E009D5C27 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5831DC7D76E009D5C27 /* Roboto-Black.ttf */; };
+		071CC58E1DC7D76E009D5C27 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5841DC7D76E009D5C27 /* Roboto-Bold.ttf */; };
+		071CC58F1DC7D76E009D5C27 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5851DC7D76E009D5C27 /* Roboto-Light.ttf */; };
+		071CC5901DC7D76E009D5C27 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5861DC7D76E009D5C27 /* Roboto-Medium.ttf */; };
+		071CC5911DC7D76E009D5C27 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5871DC7D76E009D5C27 /* Roboto-Regular.ttf */; };
+		071CC5921DC7D76E009D5C27 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071CC5881DC7D76E009D5C27 /* Roboto-Thin.ttf */; };
 		072669B11DC0B18F0068B7DD /* DecisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AB1DC0B18F0068B7DD /* DecisionView.swift */; };
 		072669B21DC0B18F0068B7DD /* DecisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AC1DC0B18F0068B7DD /* DecisionViewController.swift */; };
 		072669B31DC0B18F0068B7DD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072669AD1DC0B18F0068B7DD /* LoginView.swift */; };
@@ -165,6 +175,16 @@
 		071CC5761DC79A70009D5C27 /* ALLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALLabel.swift; path = Modules/UIComponents/ALLabel.swift; sourceTree = "<group>"; };
 		071CC5781DC79C79009D5C27 /* ALInputTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALInputTextView.swift; path = Modules/UIComponents/ALInputTextView.swift; sourceTree = "<group>"; };
 		071CC57A1DC7A300009D5C27 /* ALImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ALImagePicker.swift; path = Modules/UIComponents/ALImagePicker.swift; sourceTree = "<group>"; };
+		071CC57F1DC7D76E009D5C27 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		071CC5801DC7D76E009D5C27 /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		071CC5811DC7D76E009D5C27 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		071CC5821DC7D76E009D5C27 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		071CC5831DC7D76E009D5C27 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		071CC5841DC7D76E009D5C27 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		071CC5851DC7D76E009D5C27 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		071CC5861DC7D76E009D5C27 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		071CC5871DC7D76E009D5C27 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		071CC5881DC7D76E009D5C27 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		072669AB1DC0B18F0068B7DD /* DecisionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecisionView.swift; path = Screens/DecisionView.swift; sourceTree = "<group>"; };
 		072669AC1DC0B18F0068B7DD /* DecisionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecisionViewController.swift; path = Screens/DecisionViewController.swift; sourceTree = "<group>"; };
 		072669AD1DC0B18F0068B7DD /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = Screens/LoginView.swift; sourceTree = "<group>"; };
@@ -338,6 +358,31 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		071CC57D1DC7D76E009D5C27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				071CC57E1DC7D76E009D5C27 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
+		};
+		071CC57E1DC7D76E009D5C27 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				071CC57F1DC7D76E009D5C27 /* ProximaNova-Bold.otf */,
+				071CC5801DC7D76E009D5C27 /* ProximaNova-Light.otf */,
+				071CC5811DC7D76E009D5C27 /* ProximaNova-Regular.otf */,
+				071CC5821DC7D76E009D5C27 /* ProximaNova-Semibold.otf */,
+				071CC5831DC7D76E009D5C27 /* Roboto-Black.ttf */,
+				071CC5841DC7D76E009D5C27 /* Roboto-Bold.ttf */,
+				071CC5851DC7D76E009D5C27 /* Roboto-Light.ttf */,
+				071CC5861DC7D76E009D5C27 /* Roboto-Medium.ttf */,
+				071CC5871DC7D76E009D5C27 /* Roboto-Regular.ttf */,
+				071CC5881DC7D76E009D5C27 /* Roboto-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		072669A91DC0B14E0068B7DD /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +499,7 @@
 		07FC6E191DBF490500A0632A /* HelloSwift */ = {
 			isa = PBXGroup;
 			children = (
+				071CC57D1DC7D76E009D5C27 /* Resources */,
 				071CC47B1DC6FAC3009D5C27 /* External */,
 				07D973E51DC35F1C00F810E1 /* Modules */,
 				07E851361DC340800030C0E9 /* Extensions */,
@@ -547,8 +593,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071CC5901DC7D76E009D5C27 /* Roboto-Medium.ttf in Resources */,
+				071CC5911DC7D76E009D5C27 /* Roboto-Regular.ttf in Resources */,
+				071CC5891DC7D76E009D5C27 /* ProximaNova-Bold.otf in Resources */,
+				071CC58C1DC7D76E009D5C27 /* ProximaNova-Semibold.otf in Resources */,
+				071CC58B1DC7D76E009D5C27 /* ProximaNova-Regular.otf in Resources */,
+				071CC58A1DC7D76E009D5C27 /* ProximaNova-Light.otf in Resources */,
+				071CC58D1DC7D76E009D5C27 /* Roboto-Black.ttf in Resources */,
 				07FC6E251DBF490500A0632A /* LaunchScreen.storyboard in Resources */,
+				071CC5921DC7D76E009D5C27 /* Roboto-Thin.ttf in Resources */,
+				071CC58E1DC7D76E009D5C27 /* Roboto-Bold.ttf in Resources */,
 				07FC6E221DBF490500A0632A /* Assets.xcassets in Resources */,
+				071CC58F1DC7D76E009D5C27 /* Roboto-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

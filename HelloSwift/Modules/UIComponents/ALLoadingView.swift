@@ -36,7 +36,7 @@ class ALLoadingView: UIView {
     // MARK:: Private Functions
     private func createViews() {
         
-        self.indicator = DGActivityIndicatorView.init(type: .ballPulse, tintColor: .blue, size: 80)
+        self.indicator = DGActivityIndicatorView.init(type: .ballPulse, tintColor: UIColor.rgb(fromHex: 0x5ABD3B), size: 80)
         self.indicator?.backgroundColor = .clear
         self.addSubview(self.indicator!)
         
@@ -61,7 +61,5 @@ class ALLoadingView: UIView {
     public func stopAnimatingLoader() {
         self.indicator?.stopAnimating()
     }
-
-    
 
 }
