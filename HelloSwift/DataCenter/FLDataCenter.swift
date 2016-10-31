@@ -218,7 +218,10 @@ class FLDataCenter: NSObject {
     }
     
     private func headers() -> Dictionary<String,String> {
-        let headers = ["application-id":"5836E8FC-4A51-E65E-FF4B-E684B637F100","secret-key":"7A7C25DB-A1C2-5587-FF3E-CEC9B684CE00","Content-Type":"application/json","application-type":"REST"]
+        let headers = ["application-id":"5836E8FC-4A51-E65E-FF4B-E684B637F100",
+                       "secret-key":"7A7C25DB-A1C2-5587-FF3E-CEC9B684CE00",
+                       "Content-Type":"application/json",
+                       "application-type":"REST"]
         return headers
     }
     
