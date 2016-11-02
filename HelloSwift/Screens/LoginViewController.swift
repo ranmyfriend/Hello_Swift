@@ -9,7 +9,7 @@
 class LoginViewController : BaseViewController,loginViewProtocol {
     
     var myView: LoginView! { return self.view as! LoginView }
-
+    
     override func loadView() {
         super.loadView()
         view = LoginView.init(frame: UIScreen.main.bounds)
@@ -19,10 +19,15 @@ class LoginViewController : BaseViewController,loginViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login Scene"
+        self.setupNavigationBarForKey(key: "navbar-type1", titleView: nil)
+    }
+    
+    //MARK:: Private Functions
+    private func setupNavigationBarForKey(key:String, titleView:UIView?) {
+        NavigationBarManager.sharedInstance.applyProperties(key: key, viewController: self, titleView: titleView)
     }
     
     //MARK:: LoginViewProtocol methods
-    
     func didTapSubmitButton(email: String?, password: String?) {
         if (email?.isEmpty)! {
             self.showAlert(title: "Hello", message: "Please enter your fucking email id?")

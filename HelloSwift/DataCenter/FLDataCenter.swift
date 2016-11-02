@@ -42,10 +42,10 @@ class FLDataCenter: NSObject {
                 switch(response.result) {
                 case .success(_):
                     let data = response.result.value
-                    ReturnBlock(response.response!,data,nil)
+                    ReturnBlock(response.response!,data!,nil)
                     break
                 case .failure(_):
-                    print(response.result.error)
+                    print(response.result.error!)
                     ReturnBlock(response.response!, nil, response.result.error!)
                     break
                 }
@@ -71,7 +71,7 @@ class FLDataCenter: NSObject {
                     ReturnBlock(response.response!,data,nil)
                     break
                 case .failure(_):
-                    print(response.result.error)
+                    print(response.result.error!)
                     ReturnBlock(response.response!,nil,response.result.error!)
                     break
                     
@@ -98,7 +98,7 @@ class FLDataCenter: NSObject {
                     ReturnBlock(response.response!,data,nil)
                     break
                 case .failure(_):
-                    print(response.result.error)
+                    print(response.result.error!)
                     ReturnBlock(response.response!,nil,response.result.error!)
                     break
                     
@@ -125,7 +125,7 @@ class FLDataCenter: NSObject {
                     ReturnBlock(response.response!,data,nil)
                     break
                 case .failure(_):
-                    print(response.result.error)
+                    print(response.result.error!)
                     ReturnBlock(response.response!,nil,response.result.error!)
                     break
                     
@@ -152,7 +152,7 @@ class FLDataCenter: NSObject {
                     ReturnBlock(response.response!,data,nil)
                     break
                 case .failure(_):
-                    print(response.result.error)
+                    print(response.result.error!)
                     ReturnBlock(response.response!,nil,response.result.error!)
                     break
                     

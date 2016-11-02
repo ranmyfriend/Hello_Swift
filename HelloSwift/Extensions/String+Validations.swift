@@ -17,7 +17,7 @@ extension String {
         return false;
     }
 
-   public func verifyNumberOnly() -> Bool {
+   public func isNumberOnly() -> Bool {
         if (self.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) != nil) && !self.containsEmoji {
             return true
         }

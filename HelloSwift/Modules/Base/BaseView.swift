@@ -8,7 +8,7 @@
 
 import UIKit
 
-let ERROR_HUD_HEIGHT: CGFloat = 50.0
+fileprivate let ERROR_HUD_HEIGHT: CGFloat = 50.0
 
 enum ErrorHudPosition {
     case top

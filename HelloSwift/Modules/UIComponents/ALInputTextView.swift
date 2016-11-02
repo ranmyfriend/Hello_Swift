@@ -59,7 +59,7 @@ class ALInputTextView: UIView,UITextFieldDelegate {
     }
     
     public func verifyNumberOnly() ->Bool {
-        return (self.textField?.text?.verifyNumberOnly())!
+        return (self.textField?.text?.isNumberOnly())!
     }
     
     public func verifyEmailOnly() ->Bool {

@@ -14,9 +14,9 @@ class SignupView: BaseView {
 
     var delegate: signupViewProtocol?
     
-    var userNameTextFiled: UITextField?
-    var emailTextField: UITextField?
-    var passwordTextField: UITextField?
+    var userNameTextFiled: ALTextField?
+    var emailTextField: ALTextField?
+    var passwordTextField: ALTextField?
     var submitButton: UIButton?
     
     override init(frame: CGRect) {
@@ -32,22 +32,19 @@ class SignupView: BaseView {
         
         self.backgroundColor = .white
         
-        self.userNameTextFiled = UITextField()
-        self.userNameTextFiled?.borderStyle = .roundedRect
-        self.userNameTextFiled?.placeholder = "User Name(Optional)"
-        self.userNameTextFiled?.keyboardType = .default
+        self.userNameTextFiled = ALTextField()
+        self.userNameTextFiled?.setPlaceHolder(placeHolder: "User Name(Optional)")
+        self.userNameTextFiled?.setKeyboardType(keyboardType: .default)
         self.addSubview(self.userNameTextFiled!)
         
-        self.emailTextField = UITextField()
-        self.emailTextField?.borderStyle = .roundedRect
-        self.emailTextField?.placeholder = "Email Address"
-        self.emailTextField?.keyboardType = .emailAddress
+        self.emailTextField = ALTextField()
+        self.emailTextField?.setPlaceHolder(placeHolder: "Email Address")
+        self.emailTextField?.setKeyboardType(keyboardType:.emailAddress)
         self.addSubview(self.emailTextField!)
         
-        self.passwordTextField = UITextField()
-        self.passwordTextField?.placeholder = "Password"
-        self.passwordTextField?.keyboardType = .default
-        self.passwordTextField?.borderStyle = .roundedRect
+        self.passwordTextField = ALTextField()
+        self.passwordTextField?.setPlaceHolder(placeHolder: "Password")
+        self.passwordTextField?.setKeyboardType(keyboardType: .default)
         self.addSubview(self.passwordTextField!)
         
         self.submitButton = UIButton()
@@ -74,21 +71,21 @@ class SignupView: BaseView {
         
         self.passwordTextField?.frame = CGRect(x:leftInset, y:((self.emailTextField?.frame)?.maxY)!+20, width:avaialbleWidth, height:height)
         
-        self.submitButton?.frame = CGRect(x:leftInset, y:((self.passwordTextField?.frame)?.maxY)!+50, width:avaialbleWidth, height:height)
+        self.submitButton?.frame = CGRect(x:leftInset, y:((self.passwordTextField?.frame)?.maxY)!+50, width:avaialbleWidth, height:height+10)
     }
     
     // MARK:: Selectors
     
     @objc private func didTapSubmitButton() {
-        self.delegate?.didTapSignupButton(userName: self.userNameTextFiled?.text, email: self.emailTextField?.text, password: self.passwordTextField?.text)
+        self.delegate?.didTapSignupButton(userName: self.userNameTextFiled?.getText(), email: self.emailTextField?.getText(), password: self.passwordTextField?.getText())
     }
     
     // MARK:: Public Functions
     
     public func cleanup() {
-        self.userNameTextFiled?.text = nil
-        self.emailTextField?.text = nil
-        self.passwordTextField?.text = nil
+        self.userNameTextFiled?.textField?.text = nil
+        self.emailTextField?.textField?.text = nil
+        self.passwordTextField?.textField?.text = nil
     }
 
 }

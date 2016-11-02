@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0705BB381DC8910C00FA8AA9 /* OuterHotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0705BB371DC8910C00FA8AA9 /* OuterHotButton.swift */; };
+		0715213B1DC8AD370098D042 /* BackNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715213A1DC8AD370098D042 /* BackNavigationButtonView.swift */; };
+		0715213D1DC8D2CD0098D042 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0715213C1DC8D2CD0098D042 /* AVFoundation.framework */; };
+		0719951E1DC85C9C00F96E54 /* NavigationBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719951D1DC85C9C00F96E54 /* NavigationBarManager.swift */; };
+		071995201DC85DDF00F96E54 /* BarButtonItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719951F1DC85DDF00F96E54 /* BarButtonItemsFactory.swift */; };
+		071995281DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071995271DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift */; };
 		071CC4C81DC6FB1E009D5C27 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 071CC47E1DC6FB1D009D5C27 /* DACircularProgressView.m */; };
 		071CC4C91DC6FB1E009D5C27 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 071CC4801DC6FB1D009D5C27 /* DALabeledCircularProgressView.m */; };
 		071CC4CA1DC6FB1E009D5C27 /* DGActivityIndicatorBallBeatAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 071CC4841DC6FB1D009D5C27 /* DGActivityIndicatorBallBeatAnimation.m */; };
@@ -92,6 +98,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0705BB371DC8910C00FA8AA9 /* OuterHotButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OuterHotButton.swift; path = Modules/NavigationBarManager/OuterHotButton.swift; sourceTree = "<group>"; };
+		0715213A1DC8AD370098D042 /* BackNavigationButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackNavigationButtonView.swift; path = Modules/NavigationBarManager/BackNavigationButtonView.swift; sourceTree = "<group>"; };
+		0715213C1DC8D2CD0098D042 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0719951D1DC85C9C00F96E54 /* NavigationBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarManager.swift; path = Modules/NavigationBarManager/NavigationBarManager.swift; sourceTree = "<group>"; };
+		0719951F1DC85DDF00F96E54 /* BarButtonItemsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarButtonItemsFactory.swift; path = Modules/NavigationBarManager/BarButtonItemsFactory.swift; sourceTree = "<group>"; };
+		071995271DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeNotificationGroupBtnView.swift; path = Modules/NavigationBarManager/NavigationItems/ComposeNotificationGroupBtnView.swift; sourceTree = "<group>"; };
 		071CC47D1DC6FB1D009D5C27 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
 		071CC47E1DC6FB1D009D5C27 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		071CC47F1DC6FB1D009D5C27 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
@@ -223,6 +235,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0715213D1DC8D2CD0098D042 /* AVFoundation.framework in Frameworks */,
 				9C56D79E0FF9D02D25A5E572 /* Pods_HelloSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +243,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0719951C1DC85C4800F96E54 /* NavigationBarManager */ = {
+			isa = PBXGroup;
+			children = (
+				071995261DC87E2500F96E54 /* NavigationItems */,
+				0719951D1DC85C9C00F96E54 /* NavigationBarManager.swift */,
+				0719951F1DC85DDF00F96E54 /* BarButtonItemsFactory.swift */,
+				0705BB371DC8910C00FA8AA9 /* OuterHotButton.swift */,
+				0715213A1DC8AD370098D042 /* BackNavigationButtonView.swift */,
+			);
+			name = NavigationBarManager;
+			sourceTree = "<group>";
+		};
+		071995261DC87E2500F96E54 /* NavigationItems */ = {
+			isa = PBXGroup;
+			children = (
+				071995271DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift */,
+			);
+			name = NavigationItems;
+			sourceTree = "<group>";
+		};
 		071CC47B1DC6FAC3009D5C27 /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +482,7 @@
 		07D973E51DC35F1C00F810E1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0719951C1DC85C4800F96E54 /* NavigationBarManager */,
 				071CC4FC1DC73B84009D5C27 /* Helper */,
 				071CC4EC1DC6FB8A009D5C27 /* UIComponents */,
 				07D973E61DC35F4200F810E1 /* Base */,
@@ -516,6 +550,7 @@
 		94E8CE7B41F3B9FC01B5AB7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0715213C1DC8D2CD0098D042 /* AVFoundation.framework */,
 				4E6FFB5C0AB2CA300C7D7FE9 /* Pods_HelloSwift.framework */,
 			);
 			name = Frameworks;
@@ -560,7 +595,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Ranjith Kumar";
 				TargetAttributes = {
 					07FC6E161DBF490500A0632A = {
@@ -685,6 +720,7 @@
 				071CC4D91DC6FB1E009D5C27 /* DGActivityIndicatorBallZigZagAnimation.m in Sources */,
 				0764234A1DC6067D00EFC325 /* Data.swift in Sources */,
 				071CC5731DC75945009D5C27 /* Constants.swift in Sources */,
+				0715213B1DC8AD370098D042 /* BackNavigationButtonView.swift in Sources */,
 				071CC4EA1DC6FB1E009D5C27 /* DGActivityIndicatorTwoDotsAnimation.m in Sources */,
 				071CC4DD1DC6FB1E009D5C27 /* DGActivityIndicatorFiveDotsAnimation.m in Sources */,
 				072669B81DC0B5270068B7DD /* FLDataCenter.swift in Sources */,
@@ -694,6 +730,8 @@
 				072669B21DC0B18F0068B7DD /* DecisionViewController.swift in Sources */,
 				071CC5791DC79C79009D5C27 /* ALInputTextView.swift in Sources */,
 				071CC4D41DC6FB1E009D5C27 /* DGActivityIndicatorBallScaleMultipleAnimation.m in Sources */,
+				071995201DC85DDF00F96E54 /* BarButtonItemsFactory.swift in Sources */,
+				071995281DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift in Sources */,
 				071CC4C81DC6FB1E009D5C27 /* DACircularProgressView.m in Sources */,
 				071CC4CB1DC6FB1E009D5C27 /* DGActivityIndicatorBallClipRotateAnimation.m in Sources */,
 				071CC4DF1DC6FB1E009D5C27 /* DGActivityIndicatorLineScalePartyAnimation.m in Sources */,
@@ -712,6 +750,8 @@
 				078C358D1DC3754C007233A6 /* AddNotesView.swift in Sources */,
 				071CC4CC1DC6FB1E009D5C27 /* DGActivityIndicatorBallClipRotateMultipleAnimation.m in Sources */,
 				071CC4E01DC6FB1E009D5C27 /* DGActivityIndicatorLineScalePulseOutAnimation.m in Sources */,
+				0719951E1DC85C9C00F96E54 /* NavigationBarManager.swift in Sources */,
+				0705BB381DC8910C00FA8AA9 /* OuterHotButton.swift in Sources */,
 				071CC4CD1DC6FB1E009D5C27 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				071CC4CF1DC6FB1E009D5C27 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
 				078C358B1DC37530007233A6 /* AddNotesViewController.swift in Sources */,

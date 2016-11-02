@@ -45,7 +45,7 @@ class HomeCell: UITableViewCell {
         let createdAtDoubleValue = Double(model.created!)
         let createdAtDate = NSDate(timeIntervalSince1970:createdAtDoubleValue/1000.0)
         let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm/MMMM dd, yyyy"
+        formatter.dateFormat = "MMMM dd, yyyy"
 
         self.createdAt?.text = formatter.string(from: createdAtDate as Date)
         self.titleLabel?.text = model.title

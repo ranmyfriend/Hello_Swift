@@ -32,12 +32,12 @@ class DecisionViewController: BaseViewController,DecisionViewProtocol {
     //MARK:: DecisionView Protocol
     func didTapLoginButton() {
         let loginVC = LoginViewController()
-        self.navigationController?.pushViewController(loginVC, animated: true)
+        self.show(loginVC, sender: self)
     }
     
     func didTapSignupButton() {
         let signupVC = SignupViewController()
-        self.navigationController?.pushViewController(signupVC, animated: true)
+        self.show(signupVC, sender: self)
     }
     
 }

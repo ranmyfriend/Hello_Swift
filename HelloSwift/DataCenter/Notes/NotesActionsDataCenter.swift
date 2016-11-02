@@ -38,7 +38,7 @@ class NotesActionsDataCenter: NSObject {
         
         FLDataCenter.sharedInstance.GET(connectingURL: fetchNotesEndUrl, parameters: nil) {
             (urlResponse, urlResponseObject, error) in
-                let json = JSON(urlResponseObject)
+                let json = JSON(urlResponseObject!)
                 let notesResponse = FetchNotesResponse.init(json: json)
             returnBlock(urlResponse,notesResponse.data,error)
         }

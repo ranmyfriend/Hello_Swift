@@ -14,8 +14,8 @@ class LoginView : BaseView {
     
     weak var delegate: loginViewProtocol?
     
-    var emailTextField: UITextField?
-    var passwordTextField: UITextField?
+    var emailTextField: ALTextField?
+    var passwordTextField: ALTextField?
     var submitButton: UIButton?
     
     override init(frame: CGRect) {
@@ -45,18 +45,14 @@ class LoginView : BaseView {
         
         self.backgroundColor = .white
         
-        self.emailTextField = UITextField()
-        self.emailTextField?.placeholder = "Email"
-        self.emailTextField?.font = .appThemeRegularFontWithSize(size: 15)
-        self.emailTextField?.keyboardType = .emailAddress
-        self.emailTextField?.borderStyle = .roundedRect
+        self.emailTextField = ALTextField()
+        self.emailTextField?.setPlaceHolder(placeHolder: "Email")
+        self.emailTextField?.setKeyboardType(keyboardType: .emailAddress)
         self.addSubview(self.emailTextField!)
         
-        self.passwordTextField = UITextField()
-        self.passwordTextField?.placeholder = "Password"
-        self.passwordTextField?.font = .appThemeRegularFontWithSize(size: 15)
-        self.passwordTextField?.keyboardType = .default
-        self.passwordTextField?.borderStyle = .roundedRect
+        self.passwordTextField = ALTextField()
+        self.passwordTextField?.setPlaceHolder(placeHolder: "Password")
+        self.passwordTextField?.setKeyboardType(keyboardType: .default)
         self.addSubview(self.passwordTextField!)
         
         self.submitButton = UIButton()
@@ -72,15 +68,14 @@ class LoginView : BaseView {
     //MARK:: Selectors
     
    @objc private func didTapSubmitButton() {
-        self.delegate?.didTapSubmitButton(email: self.emailTextField?.text, password: self.passwordTextField?.text)
+        self.delegate?.didTapSubmitButton(email: self.emailTextField?.getText(), password: self.passwordTextField?.getText())
     }
     
     //MARK:: Public Functions
     
     public func cleanup() {
-        self.emailTextField?.text = nil
-        self.passwordTextField?.text = nil
+        self.emailTextField?.textField?.text = nil
+        self.passwordTextField?.textField?.text = nil
     }
     
 }
-

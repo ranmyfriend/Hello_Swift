@@ -8,8 +8,8 @@
 
 import UIKit
 
-let kCircleOutThicknessRatio:CGFloat = 0.2
-let kCircleInThicknessRatio:CGFloat = 0.25
+fileprivate let kCircleOutThicknessRatio:CGFloat = 0.2
+fileprivate let kCircleInThicknessRatio:CGFloat = 0.25
 
 class ALLoadingCell: UITableViewCell {
     
@@ -110,17 +110,16 @@ class ALLoadingCell: UITableViewCell {
             
             let value: Double = (M_PI * 2.0 * rotations)
             
-            var rotationAnimation: CABasicAnimation?
-            rotationAnimation?.mutableSetValue(forKeyPath:"transform.rotation.z")
-            rotationAnimation?.duration = duration
-            rotationAnimation?.isCumulative = true
-            rotationAnimation?.repeatCount = 1
+            let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+            rotationAnimation.duration = duration
+            rotationAnimation.isCumulative = true
+            rotationAnimation.repeatCount = 1
             
-            rotationAnimation?.toValue = value
-            self.circleViewOut?.layer.add(rotationAnimation!, forKey: "rotationAnimation")
+            rotationAnimation.toValue = value
+            self.circleViewOut?.layer.add(rotationAnimation, forKey: "rotationAnimation")
             
-            rotationAnimation?.toValue = -value
-            self.circleViewIn?.layer.add(rotationAnimation!, forKey: "rotationAnimation")
+            rotationAnimation.toValue = -value
+            self.circleViewIn?.layer.add(rotationAnimation, forKey: "rotationAnimation")
             
         }
     }

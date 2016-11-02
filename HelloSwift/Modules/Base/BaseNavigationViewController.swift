@@ -15,15 +15,13 @@ class BaseNavigationViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationBarSetup()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     //MARK:: Public Functions
     
@@ -35,7 +33,8 @@ class BaseNavigationViewController: UINavigationController {
         if(self.topViewController?.isEqual(self.decisionViewController))! {
             self.popToViewController(self.decisionViewController!, animated: false)
         }else {
-            self.pushViewController(self.decisionViewController!, animated: true)
+            // Note: Show is updated one
+            self.show(self.decisionViewController!, sender: self)
         }
     }
     
@@ -47,8 +46,16 @@ class BaseNavigationViewController: UINavigationController {
         if(self.topViewController?.isEqual(self.homeViewController))! {
             self.popToViewController(self.homeViewController!, animated: false)
         }else {
-            self.pushViewController(self.homeViewController!, animated: true)
+            self.show(self.homeViewController!, sender: self)
         }
     }
     
+    // MARK:: Private Functions
+    
+    private func navigationBarSetup() {
+        self.navigationBar.barTintColor = .green
+        self.navigationBar.isTranslucent = false
+        self.navigationBar.tintColor = .white
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.appThemeRegularFontWithSize(size: 18)]
+    }
 }

@@ -25,6 +25,10 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
             let addNoteBarButton = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(didTapAddNotesButton))
             self.navigationItem.rightBarButtonItem = addNoteBarButton
         }
+        if(self.navigationItem.leftBarButtonItem == nil) {
+            let logoutBarButton = UIBarButtonItem.init(title: "Logout", style: .done, target: self, action: #selector(didTapLogoutButton))
+            self.navigationItem.leftBarButtonItem = logoutBarButton
+        }
     }
     
     override func viewDidLoad() {
@@ -44,6 +48,12 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
         let addNotesViewController = AddNotesViewController()
         self.navigationController?.pushViewController(addNotesViewController, animated: true)
     }
+    
+    @objc private func didTapLogoutButton() {
+        
+    }
+
+
     
     func fetchNotes() {
         self.myView.showLoadingViewWithMessage(message: Constants.fetchNotesCaption)

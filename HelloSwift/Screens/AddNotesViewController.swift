@@ -45,9 +45,9 @@ class AddNotesViewController: BaseViewController,AddNotesProtocol {
         }else {
          NotesActionsDataCenter.sharedInstance.addNotes(title: title, bodyText: body, ReturnBlock: { (urlResponse, responseObject, error) in
             if((error) != nil) {
-                print("Error: %@",error)
+                print("Error: %@",error!)
             }else {
-                print("responseObject: %@",responseObject)
+                print("responseObject: %@",responseObject!)
             }
          })
         }

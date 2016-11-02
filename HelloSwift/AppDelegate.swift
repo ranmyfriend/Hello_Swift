@@ -14,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.setupBackEndLess()
         self.setupRootScene()
+        self.setupBackEndLess()
+        self.setupNavigationBarTheme()
         return true
     }
 
@@ -46,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(self.window == nil) {
             self.window = UIWindow()
         }
-        let decisionVC = HomeViewController()
+        let decisionVC = DecisionViewController()
         let navigationController = BaseNavigationViewController.init(rootViewController: decisionVC)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
@@ -57,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let baseURL = "https://api.backendless.com"
         let versionNumber = "v1"
         FLDataCenter.sharedInstance .setBaseDomain(domain: baseURL+"/"+versionNumber+"/")
+    }
+    
+    func setupNavigationBarTheme() {
+
     }
 }
 
