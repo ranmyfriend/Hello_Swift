@@ -31,7 +31,7 @@ class HomeView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.tableView?.frame = self.frame
+        self.tableView?.frame = self.bounds
     }
 
 }

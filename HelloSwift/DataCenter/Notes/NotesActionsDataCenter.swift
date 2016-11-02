@@ -9,6 +9,12 @@
 import UIKit
 import SwiftyJSON
 
+//Generic enum that represents the result
+enum AsyncResult<T> {
+    case Success(T)
+    case Failure(Error?)
+}
+
 class NotesActionsDataCenter: NSObject {
 
     class var sharedInstance: NotesActionsDataCenter {
@@ -18,7 +24,7 @@ class NotesActionsDataCenter: NSObject {
         return Static.instance
     }
     
-    func addNotes(title:String?, bodyText:String?, ReturnBlock:@escaping returnBlock) {
+    func addNotes(title:String?, bodyText:String?, completion:@escaping (AsyncResult<AnyObject?>)->()) {
         
         let addNotesEndUrl = "data/Notes"
         
@@ -29,18 +35,27 @@ class NotesActionsDataCenter: NSObject {
      
         FLDataCenter.sharedInstance.POST(connectingURL: addNotesEndUrl, parameters: parameters) {
             (urlResponse, urlResponseObject, error) in
-            ReturnBlock(urlResponse,urlResponseObject,error)
+            if let error = error {
+                completion(AsyncResult.Failure(error))
+            }else {
+                completion(AsyncResult.Success(urlResponseObject as AnyObject?))
+            }
         }
     }
     
-    func fetchNotes(returnBlock:@escaping returnBlock) {
+    func fetchNotes(completion: @escaping (AsyncResult<[Data]>)->()) {
         let fetchNotesEndUrl = "data/Notes"
         
         FLDataCenter.sharedInstance.GET(connectingURL: fetchNotesEndUrl, parameters: nil) {
             (urlResponse, urlResponseObject, error) in
+
+            if let error = error {
+                completion(AsyncResult.Failure(error))
+            } else {
                 let json = JSON(urlResponseObject!)
-                let notesResponse = FetchNotesResponse.init(json: json)
-            returnBlock(urlResponse,notesResponse.data,error)
+                let data = FetchNotesResponse.init(json: json).data
+                completion(AsyncResult.Success(data!))
+            }
         }
     }
     

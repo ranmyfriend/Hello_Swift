@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-typealias returnBlock = (URLResponse?, Any?, Error?) -> Void
+typealias returnBlock = (URLResponse?, AnyObject?, Error?) -> Void
 
 class FLDataCenter: NSObject {
     
@@ -41,8 +41,8 @@ class FLDataCenter: NSObject {
                 response in
                 switch(response.result) {
                 case .success(_):
-                    let data = response.result.value
-                    ReturnBlock(response.response!,data!,nil)
+                    let data = response.result.value as AnyObject
+                    ReturnBlock(response.response!,data,nil)
                     break
                 case .failure(_):
                     print(response.result.error!)
@@ -68,7 +68,7 @@ class FLDataCenter: NSObject {
                 switch(response.result) {
                 case .success(_):
                     let data = response.result.value
-                    ReturnBlock(response.response!,data,nil)
+                    ReturnBlock(response.response!,data as AnyObject?,nil)
                     break
                 case .failure(_):
                     print(response.result.error!)
@@ -95,7 +95,7 @@ class FLDataCenter: NSObject {
                 switch(response.result) {
                 case .success(_):
                     let data = response.result.value
-                    ReturnBlock(response.response!,data,nil)
+                    ReturnBlock(response.response!,data as AnyObject?,nil)
                     break
                 case .failure(_):
                     print(response.result.error!)
@@ -122,7 +122,7 @@ class FLDataCenter: NSObject {
                 switch(response.result) {
                 case .success(_):
                     let data = response.result.value
-                    ReturnBlock(response.response!,data,nil)
+                    ReturnBlock(response.response!,data as AnyObject?,nil)
                     break
                 case .failure(_):
                     print(response.result.error!)
@@ -149,7 +149,7 @@ class FLDataCenter: NSObject {
                 switch(response.result) {
                 case .success(_):
                     let data = response.result.value
-                    ReturnBlock(response.response!,data,nil)
+                    ReturnBlock(response.response!,data as AnyObject?,nil)
                     break
                 case .failure(_):
                     print(response.result.error!)
@@ -207,7 +207,7 @@ class FLDataCenter: NSObject {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
                         debugPrint(response)
-                        ReturnBlock(response.response!,response.data,nil)
+                        ReturnBlock(response.response!,response.data as AnyObject?,nil)
                     }
                 case .failure(let encodingError):
                     print(encodingError)

@@ -8,7 +8,7 @@
 
 
 class AddNotesViewController: BaseViewController,AddNotesProtocol {
-
+    
     var myView: AddNotesView {return self.view as! AddNotesView}
     
     override func loadView() {
@@ -21,36 +21,34 @@ class AddNotesViewController: BaseViewController,AddNotesProtocol {
         super.viewDidLoad()
         self.title = "Add Notes"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     //MARK:: AddNotes Protocol methods
-    
-  /*  responseObject: %@ Optional({
-    Body = Fads;
-    Title = Adds;
-    "___class" = Notes;
-    "__meta" = "{\"relationRemovalIds\":{},\"selectedProperties\":[\"created\",\"___saved\",\"___class\",\"Title\",\"ownerId\",\"Body\",\"updated\",\"objectId\"],\"relatedObjects\":{}}";
-    created = 1477684910000;
-    objectId = "95AA8DCF-070C-0EC1-FFCD-CB5BF91C9100";
-    ownerId = "<null>";
-    updated = "<null>";
-    }) */
-    
     func didTapSaveButton(title: String?, body: String?) {
         if (title?.isEmpty)! {
             self.showAlert(title: "Hello", message: "Please drop some Title?")
         }else {
-         NotesActionsDataCenter.sharedInstance.addNotes(title: title, bodyText: body, ReturnBlock: { (urlResponse, responseObject, error) in
-            if((error) != nil) {
-                print("Error: %@",error!)
-            }else {
-                print("responseObject: %@",responseObject!)
-            }
-         })
+            self.myView.showLoadingViewWithMessage(message:Constants.savingNotesCaption)
+            NotesActionsDataCenter.sharedInstance.addNotes(title: title, bodyText: body, completion:
+                { (result) in
+                    self.myView.hideLoadingView()
+                    switch result
+                    {
+                    case .Success(let note):
+                        print(note!)
+                        // Here if you dont give _ compiler will give warning - Expression of type uiviewcontroller is unused
+                        //http://stackoverflow.com/questions/37843049/xcode-8-swift-3-expression-of-type-uiviewcontroller-is-unused-warning
+                        _ = self.navigationController?.popViewController(animated: true)
+                        break
+                    case .Failure(let error):
+                        print(error!)
+                        break
+                    }
+            })
         }
     }
-
+    
 }

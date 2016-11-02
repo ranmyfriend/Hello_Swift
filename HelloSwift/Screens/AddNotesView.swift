@@ -16,10 +16,8 @@ class AddNotesView: BaseView {
     
     var titleTextField: UITextField?
     var bodyTextView: UITextView?
-    
     var saveButton: UIButton?
-    
-    var delegate: AddNotesProtocol?
+    weak var delegate: AddNotesProtocol?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,7 +44,7 @@ class AddNotesView: BaseView {
         self.addSubview(self.bodyTextView!)
         
         self.saveButton = UIButton()
-        self.saveButton?.setTitle("Notes->Save", for: .normal)
+        self.saveButton?.setTitle("Save", for: .normal)
         self.saveButton?.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         self.saveButton?.layer.cornerRadius = 4.0
         self.saveButton?.setTitleColor(.white, for: .normal)
@@ -58,7 +56,7 @@ class AddNotesView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let topInset: CGFloat = 100.0
+        let topInset: CGFloat = 20.0
         let leftInset: CGFloat = 20.0
         let height: CGFloat = 40.0
         let availableWidth = self.bounds.width - (2*leftInset)
@@ -67,7 +65,7 @@ class AddNotesView: BaseView {
         
         self.bodyTextView?.frame = CGRect(x:leftInset, y:((self.titleTextField?.frame)?.maxY)!+20,width:availableWidth, height:(2*height))
         
-        self.saveButton?.frame = CGRect(x:leftInset, y:((self.bodyTextView?.frame)?.maxY)!+20, width:availableWidth, height:height)
+        self.saveButton?.frame = CGRect(x:leftInset, y:((self.bodyTextView?.frame)?.maxY)!+20, width:availableWidth, height:height+10)
         
     }
     

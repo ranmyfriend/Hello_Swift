@@ -9,6 +9,7 @@
 import Foundation
 
 struct Constants {
+    static let savingNotesCaption       = "Saving Notes..."
     static let fetchNotesCaption        = "Fetching Notes..."
     static let loggingInCaption         = "Logging In..."
     static let loadingCaption           = "Loading..."

@@ -9,7 +9,12 @@
 class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     var myView: HomeView{return self.view as! HomeView}
-    lazy var dataSource = [Data]()
+    
+    var dataSource: Array<Data> = [] {
+        didSet {
+            self.myView.tableView?.reloadData()
+        }
+    }
     
     override func loadView() {
         super.loadView()
@@ -49,21 +54,20 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
         self.navigationController?.pushViewController(addNotesViewController, animated: true)
     }
     
-    @objc private func didTapLogoutButton() {
-        
-    }
-
-
+    @objc private func didTapLogoutButton() {}
     
     func fetchNotes() {
         self.myView.showLoadingViewWithMessage(message: Constants.fetchNotesCaption)
-        NotesActionsDataCenter.sharedInstance.fetchNotes { (urlResponse, responseObject, error) in
+        NotesActionsDataCenter.sharedInstance.fetchNotes { (result) in
             self.myView.hideLoadingView()
-            if(error != nil) {
-                
-            }else {
-                self.dataSource = responseObject as! [Data]
-                self.myView.tableView?.reloadData()
+            switch result
+            {
+            case .Success(let notes):
+                self.dataSource = notes
+                break
+            case .Failure(let error):
+                print(error!)
+                break
             }
         }
     }
