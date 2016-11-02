@@ -46,7 +46,6 @@ class NavigationBarManager: NSObject {
     }
     
     //MARK:: Utitility methods.
-    
     fileprivate func barButtonItemsFromDictionaryArr(dictArr:[[String:String]], forViewController:UIViewController) ->[UIBarButtonItem]? {
         if (dictArr.count == 0) {
             return nil
@@ -69,14 +68,12 @@ class NavigationBarManager: NSObject {
     
     
     //MARK:: Private Functions - Navigation Bar methods.
-    
     fileprivate func navBarDictForKey(propertyKey:String) -> [String:Any] {
         let navigationbarDictionary = self.navigationBarData() 
         return navigationbarDictionary![propertyKey] as! [String:Any]
     }
     
     fileprivate func navigationBarData() -> [String:Any]? {
-        //FIXME: This is a temporary solution because title is not coming in center.
         return
             ["navbar-type1":["right":[["key":"composeNotificationGroup"]]],
              "navbar-type1a":["right":[["key":"composeNotificationGroup"]],
@@ -85,6 +82,7 @@ class NavigationBarManager: NSObject {
                              "right":[["key":"nextBtn"]]],
              "navbar-type3":["right":[["key":"nextBtn"]]],
              "navbar-type4":["right":[["key":"doneBtn"]]],
+             //FIXME: This is a temporary solution because title is not coming in center.
              "navbar-type5":["right":[["key":"emptyTextBtn"]]],
              "navbar-type6":["left":[["key":"cancelBtn"]]],
              "navbar-type7":["left":[["key":"cancelBtn"]],
