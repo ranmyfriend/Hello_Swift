@@ -6,17 +6,19 @@
 //  Copyright © 2016 Ranjith Kumar. All rights reserved.
 //
 
+import TextFieldEffects
+
 protocol signupViewProtocol: class {
     func didTapSignupButton(userName:String?, email:String?, password:String?)
 }
 
-class SignupView: BaseView {
+class SignupView: BaseView,UITextFieldDelegate {
 
     var delegate: signupViewProtocol?
     
-    var userNameTextFiled: ALTextField?
-    var emailTextField: ALTextField?
-    var passwordTextField: ALTextField?
+    var userNameTextFiled: HoshiTextField?
+    var emailTextField: HoshiTextField?
+    var passwordTextField: HoshiTextField?
     var submitButton: UIButton?
     
     override init(frame: CGRect) {
@@ -28,23 +30,45 @@ class SignupView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
-   private func createViews() {
+    private func createViews() {
         
         self.backgroundColor = .white
         
-        self.userNameTextFiled = ALTextField()
-        self.userNameTextFiled?.setPlaceHolder(placeHolder: "User Name(Optional)")
-        self.userNameTextFiled?.setKeyboardType(keyboardType: .default)
-        self.addSubview(self.userNameTextFiled!)
-        
-        self.emailTextField = ALTextField()
-        self.emailTextField?.setPlaceHolder(placeHolder: "Email Address")
-        self.emailTextField?.setKeyboardType(keyboardType:.emailAddress)
+        self.emailTextField = HoshiTextField()
+        self.emailTextField?.placeholder = " Email"
+        self.emailTextField?.keyboardType = .emailAddress
+        self.emailTextField?.clearButtonMode = .whileEditing
+        self.emailTextField?.delegate = self
+        self.emailTextField?.returnKeyType = .next
+        self.emailTextField?.borderStyle = .roundedRect
+        self.emailTextField?.font = UIFont.appThemeRegularFontWithSize(size: 16)
+        self.emailTextField?.placeholderColor = .lightGray
+        self.emailTextField?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(size: 16)
         self.addSubview(self.emailTextField!)
         
-        self.passwordTextField = ALTextField()
-        self.passwordTextField?.setPlaceHolder(placeHolder: "Password")
-        self.passwordTextField?.setKeyboardType(keyboardType: .default)
+        self.userNameTextFiled = HoshiTextField()
+        self.userNameTextFiled?.placeholder = " Full Name"
+        self.userNameTextFiled?.keyboardType = .default
+        self.userNameTextFiled?.clearButtonMode = .whileEditing
+        self.userNameTextFiled?.delegate = self
+        self.userNameTextFiled?.returnKeyType = .next
+        self.userNameTextFiled?.borderStyle = .roundedRect
+        self.userNameTextFiled?.font = UIFont.appThemeRegularFontWithSize(size: 16)
+        self.userNameTextFiled?.placeholderColor = .lightGray
+        self.userNameTextFiled?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(size: 16)
+        self.addSubview(self.userNameTextFiled!)
+        
+        self.passwordTextField = HoshiTextField()
+        self.passwordTextField?.placeholder = " Password"
+        self.passwordTextField?.keyboardType = .default
+        self.passwordTextField?.clearButtonMode = .whileEditing
+        self.passwordTextField?.delegate = self
+        self.passwordTextField?.returnKeyType = .go
+        self.passwordTextField?.isSecureTextEntry = true
+        self.passwordTextField?.borderStyle = .roundedRect
+        self.passwordTextField?.font = UIFont.appThemeRegularFontWithSize(size: 16)
+        self.passwordTextField?.placeholderColor = .lightGray
+        self.passwordTextField?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(size: 16)
         self.addSubview(self.passwordTextField!)
         
         self.submitButton = UIButton()
@@ -61,7 +85,7 @@ class SignupView: BaseView {
         super.layoutSubviews()
         let topInset: CGFloat = 100.0
         let leftInset: CGFloat = 20.0
-        let height: CGFloat = 40.0
+        let height: CGFloat = 50.0
         let avaialbleWidth: CGFloat
         avaialbleWidth = self.bounds.width - (2*leftInset)
         
@@ -71,21 +95,21 @@ class SignupView: BaseView {
         
         self.passwordTextField?.frame = CGRect(x:leftInset, y:((self.emailTextField?.frame)?.maxY)!+20, width:avaialbleWidth, height:height)
         
-        self.submitButton?.frame = CGRect(x:leftInset, y:((self.passwordTextField?.frame)?.maxY)!+50, width:avaialbleWidth, height:height+10)
+        self.submitButton?.frame = CGRect(x:leftInset, y:((self.passwordTextField?.frame)?.maxY)!+50, width:avaialbleWidth, height:50)
     }
     
     // MARK:: Selectors
     
     @objc private func didTapSubmitButton() {
-        self.delegate?.didTapSignupButton(userName: self.userNameTextFiled?.getText(), email: self.emailTextField?.getText(), password: self.passwordTextField?.getText())
+        self.delegate?.didTapSignupButton(userName: self.userNameTextFiled?.text, email: self.emailTextField?.text, password: self.passwordTextField?.text)
     }
     
     // MARK:: Public Functions
     
     public func cleanup() {
-        self.userNameTextFiled?.textField?.text = nil
-        self.emailTextField?.textField?.text = nil
-        self.passwordTextField?.textField?.text = nil
+        self.userNameTextFiled?.text = ""
+        self.emailTextField?.text = ""
+        self.passwordTextField?.text = ""
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate let ERROR_HUD_HEIGHT: CGFloat = 50.0
+private let errorHudHeight: CGFloat = 50.0
 
 enum ErrorHudPosition {
     case top
@@ -117,14 +117,14 @@ class BaseView: UIView {
         //Note: dont want to create duplicate huds
         if self.isErrorHudAnimating! { return }
         
-        self.errorHudView?.frame = CGRect(x:0, y:-ERROR_HUD_HEIGHT, width:self.bounds.width, height:ERROR_HUD_HEIGHT)
+        self.errorHudView?.frame = CGRect(x:0, y:-errorHudHeight, width:self.bounds.width, height:errorHudHeight)
         let duration: Double = 0.5
         UIView .animate(withDuration: duration, delay: 0.0, options: .curveEaseIn, animations: {
             self.isErrorHudAnimating = true
-            self.errorHudView?.frame = CGRect(x:0, y:0, width:self.bounds.width, height:ERROR_HUD_HEIGHT)
+            self.errorHudView?.frame = CGRect(x:0, y:0, width:self.bounds.width, height:errorHudHeight)
         }) { (finished) in
             UIView .animate(withDuration: duration, delay: 2.0, options: .curveEaseIn, animations: {
-                self.errorHudView?.frame = CGRect(x:0, y:-ERROR_HUD_HEIGHT, width:self.bounds.width, height:ERROR_HUD_HEIGHT)
+                self.errorHudView?.frame = CGRect(x:0, y:-errorHudHeight, width:self.bounds.width, height:errorHudHeight)
                 }, completion: { (finished) in
                     self.isErrorHudAnimating = false
             })
@@ -134,14 +134,14 @@ class BaseView: UIView {
     private func animateFromBottom() {
         if self.isErrorHudAnimating! { return }
 
-        self.errorHudView?.frame = CGRect(x:0, y:(self.bounds.height+ERROR_HUD_HEIGHT), width:self.bounds.width, height:ERROR_HUD_HEIGHT)
+        self.errorHudView?.frame = CGRect(x:0, y:(self.bounds.height+errorHudHeight), width:self.bounds.width, height:errorHudHeight)
         let duration: Double = 0.5
         UIView.animate(withDuration: duration, delay: 0.0, options: .curveEaseIn, animations: {
             self.isErrorHudAnimating = true
-            self.errorHudView?.frame = CGRect(x:0, y:self.bounds.height-ERROR_HUD_HEIGHT, width:self.bounds.width, height:ERROR_HUD_HEIGHT)
+            self.errorHudView?.frame = CGRect(x:0, y:self.bounds.height-errorHudHeight, width:self.bounds.width, height:errorHudHeight)
         }) { (finished) in
             UIView.animate(withDuration: duration, delay: 2.0, options: .curveEaseIn, animations: {
-                self.errorHudView?.frame = CGRect(x:0, y:self.bounds.height+ERROR_HUD_HEIGHT, width:self.bounds.width, height:ERROR_HUD_HEIGHT)
+                self.errorHudView?.frame = CGRect(x:0, y:self.bounds.height+errorHudHeight, width:self.bounds.width, height:errorHudHeight)
                 }, completion: { (finished) in
                     self.isErrorHudAnimating = false
             })

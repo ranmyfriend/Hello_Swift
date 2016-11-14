@@ -10,6 +10,7 @@
 		0705BB381DC8910C00FA8AA9 /* OuterHotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0705BB371DC8910C00FA8AA9 /* OuterHotButton.swift */; };
 		0715213B1DC8AD370098D042 /* BackNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715213A1DC8AD370098D042 /* BackNavigationButtonView.swift */; };
 		0715213D1DC8D2CD0098D042 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0715213C1DC8D2CD0098D042 /* AVFoundation.framework */; };
+		0716D35D1DD7324E00252A24 /* AttributedString+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0716D35C1DD7324E00252A24 /* AttributedString+CustomFont.swift */; };
 		0719951E1DC85C9C00F96E54 /* NavigationBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719951D1DC85C9C00F96E54 /* NavigationBarManager.swift */; };
 		071995201DC85DDF00F96E54 /* BarButtonItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719951F1DC85DDF00F96E54 /* BarButtonItemsFactory.swift */; };
 		071995281DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071995271DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift */; };
@@ -101,6 +102,7 @@
 		0705BB371DC8910C00FA8AA9 /* OuterHotButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OuterHotButton.swift; path = Modules/NavigationBarManager/OuterHotButton.swift; sourceTree = "<group>"; };
 		0715213A1DC8AD370098D042 /* BackNavigationButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackNavigationButtonView.swift; path = Modules/NavigationBarManager/BackNavigationButtonView.swift; sourceTree = "<group>"; };
 		0715213C1DC8D2CD0098D042 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0716D35C1DD7324E00252A24 /* AttributedString+CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AttributedString+CustomFont.swift"; path = "Extensions/AttributedString+CustomFont.swift"; sourceTree = "<group>"; };
 		0719951D1DC85C9C00F96E54 /* NavigationBarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarManager.swift; path = Modules/NavigationBarManager/NavigationBarManager.swift; sourceTree = "<group>"; };
 		0719951F1DC85DDF00F96E54 /* BarButtonItemsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarButtonItemsFactory.swift; path = Modules/NavigationBarManager/BarButtonItemsFactory.swift; sourceTree = "<group>"; };
 		071995271DC87E5100F96E54 /* ComposeNotificationGroupBtnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComposeNotificationGroupBtnView.swift; path = Modules/NavigationBarManager/NavigationItems/ComposeNotificationGroupBtnView.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 		07E851361DC340800030C0E9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0716D35C1DD7324E00252A24 /* AttributedString+CustomFont.swift */,
 				07E851371DC340BF0030C0E9 /* String+Validations.swift */,
 				07E851391DC344950030C0E9 /* ViewController+Alerts.swift */,
 				071CC4F01DC70610009D5C27 /* Color+CustomColor.swift */,
@@ -600,7 +603,7 @@
 				TargetAttributes = {
 					07FC6E161DBF490500A0632A = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B76KMHZKZ7;
+						DevelopmentTeam = GWPPP8XM37;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -754,6 +757,7 @@
 				0705BB381DC8910C00FA8AA9 /* OuterHotButton.swift in Sources */,
 				071CC4CD1DC6FB1E009D5C27 /* DGActivityIndicatorBallClipRotatePulseAnimation.m in Sources */,
 				071CC4CF1DC6FB1E009D5C27 /* DGActivityIndicatorBallGridPulseAnimation.m in Sources */,
+				0716D35D1DD7324E00252A24 /* AttributedString+CustomFont.swift in Sources */,
 				078C358B1DC37530007233A6 /* AddNotesViewController.swift in Sources */,
 				071CC4D11DC6FB1E009D5C27 /* DGActivityIndicatorBallPulseSyncAnimation.m in Sources */,
 				071CC4D51DC6FB1E009D5C27 /* DGActivityIndicatorBallScaleRippleAnimation.m in Sources */,
@@ -888,7 +892,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B76KMHZKZ7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GWPPP8XM37;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -905,7 +910,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B76KMHZKZ7;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = GWPPP8XM37;
 				INFOPLIST_FILE = HelloSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

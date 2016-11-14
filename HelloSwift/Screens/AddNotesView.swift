@@ -49,6 +49,7 @@ class AddNotesView: BaseView {
         self.saveButton?.layer.cornerRadius = 4.0
         self.saveButton?.setTitleColor(.white, for: .normal)
         self.saveButton?.backgroundColor = .blue
+
         self.saveButton?.titleLabel?.font = .appThemeBoldFontWithSize(size: 17)
         self.saveButton?.titleLabel?.textAlignment = .center
         self.addSubview(self.saveButton!)

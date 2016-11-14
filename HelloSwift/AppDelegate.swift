@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(self.window == nil) {
             self.window = UIWindow()
         }
-        let decisionVC = HomeViewController()
+        let decisionVC = SignupViewController()
         let navigationController = BaseNavigationViewController.init(rootViewController: decisionVC)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

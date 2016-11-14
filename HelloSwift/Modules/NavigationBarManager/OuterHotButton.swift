@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate let OUTER_MARGIN:CGFloat = 15.0
+private let outerMargin:CGFloat = 15.0
 
 class OuterHotButton: UIButton {
 
@@ -32,8 +32,8 @@ class OuterHotButton: UIButton {
     
     private func createViews() {
         self.clipsToBounds = false
-        self.yTapExtension = OUTER_MARGIN;
-        self.xTapExtension = OUTER_MARGIN;
+        self.yTapExtension = outerMargin;
+        self.xTapExtension = outerMargin;
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

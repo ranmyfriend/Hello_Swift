@@ -9,7 +9,7 @@
 import UIKit
 
 // Defines center's x co-ordinate value for button.
-fileprivate let LEFT_MARGIN:CGFloat = 25.0
+private let leftMargin:CGFloat = 25.0
 
 class BackNavigationButtonView: UIView {
 
@@ -30,7 +30,7 @@ class BackNavigationButtonView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.clickButton?.frame = CGRect(x:-LEFT_MARGIN, y:0, width:self.bounds.width, height:self.bounds.height)
+        self.clickButton?.frame = CGRect(x:-leftMargin, y:0, width:self.bounds.width, height:self.bounds.height)
     }
     
     // MARK:: Private Functions

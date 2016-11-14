@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate let BACK_BUTTON_TEXT = ""
+private let backButtonText = ""
 
 class NavigationBarManager: NSObject {
     
@@ -62,7 +62,7 @@ class NavigationBarManager: NSObject {
     fileprivate func backButtonSettingsForViewController(viewController: UIViewController) {
         viewController.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back_icon")
         viewController.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back_icon")
-        let backItem = UIBarButtonItem(title: BACK_BUTTON_TEXT, style: .plain, target: nil, action: nil)
+        let backItem = UIBarButtonItem(title: backButtonText, style: .plain, target: nil, action: nil)
         viewController.navigationItem.backBarButtonItem = backItem
     }
     

@@ -8,8 +8,8 @@
 
 import UIKit
 
-fileprivate let kCircleOutThicknessRatio:CGFloat = 0.2
-fileprivate let kCircleInThicknessRatio:CGFloat = 0.25
+private let circleOutThicknessRatio:CGFloat = 0.2
+private let circleInThicknessRatio:CGFloat = 0.25
 
 class ALLoadingCell: UITableViewCell {
     
@@ -83,7 +83,7 @@ class ALLoadingCell: UITableViewCell {
         self.circleViewOut?.setProgress(0.0, animated: false)
         self.circleViewOut?.alpha = 1.0
         self.circleViewOut?.layer.anchorPoint = CGPoint(x:0.5, y:0.5)
-        self.circleViewOut?.thicknessRatio = kCircleOutThicknessRatio
+        self.circleViewOut?.thicknessRatio = circleOutThicknessRatio
         self.addSubview(self.circleViewOut!)
         
         self.circleViewIn = DACircularProgressView()
@@ -95,7 +95,7 @@ class ALLoadingCell: UITableViewCell {
         self.circleViewIn?.alpha = 1.0
         self.circleViewIn?.layer.anchorPoint = CGPoint(x:0.5, y:0.5)
         self.circleViewIn?.transform = (circleViewIn?.transform)!.scaledBy(x: -1, y: 1)
-        self.circleViewIn?.thicknessRatio = kCircleInThicknessRatio
+        self.circleViewIn?.thicknessRatio = circleInThicknessRatio
         self.addSubview(self.circleViewIn!)
         
         self.circleViewOut?.setProgress(0.9, animated: false)
