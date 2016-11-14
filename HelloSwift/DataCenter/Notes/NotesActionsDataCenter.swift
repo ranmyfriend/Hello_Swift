@@ -11,8 +11,8 @@ import SwiftyJSON
 
 //Generic enum that represents the result
 enum AsyncResult<T> {
-    case Success(T)
-    case Failure(Error?)
+    case success(T)
+    case failure(Error?)
 }
 
 class NotesActionsDataCenter: NSObject {
@@ -24,7 +24,7 @@ class NotesActionsDataCenter: NSObject {
         return Static.instance
     }
     
-    func addNotes(title:String?, bodyText:String?, completion:@escaping (AsyncResult<AnyObject?>)->()) {
+    func addNotes(_ title:String?, bodyText:String?, completion:@escaping (AsyncResult<AnyObject?>)->()) {
         
         let addNotesEndUrl = "data/Notes"
         
@@ -33,28 +33,28 @@ class NotesActionsDataCenter: NSObject {
         parameters["Title"] = title
         parameters["Body"] = bodyText
      
-        FLDataCenter.sharedInstance.POST(connectingURL: addNotesEndUrl, parameters: parameters) {
+        FLDataCenter.sharedInstance.POST(addNotesEndUrl, parameters: parameters) {
             (urlResponse, urlResponseObject, error) in
             if let error = error {
-                completion(AsyncResult.Failure(error))
+                completion(AsyncResult.failure(error))
             }else {
-                completion(AsyncResult.Success(urlResponseObject as AnyObject?))
+                completion(AsyncResult.success(urlResponseObject as AnyObject?))
             }
         }
     }
     
-    func fetchNotes(completion: @escaping (AsyncResult<[Data]>)->()) {
+    func fetchNotes(_ completion: @escaping (AsyncResult<[Data]>)->()) {
         let fetchNotesEndUrl = "data/Notes"
         
-        FLDataCenter.sharedInstance.GET(connectingURL: fetchNotesEndUrl, parameters: nil) {
+        FLDataCenter.sharedInstance.GET(fetchNotesEndUrl, parameters: nil) {
             (urlResponse, urlResponseObject, error) in
 
             if let error = error {
-                completion(AsyncResult.Failure(error))
+                completion(AsyncResult.failure(error))
             } else {
                 let json = JSON(urlResponseObject!)
                 let data = FetchNotesResponse.init(json: json).data
-                completion(AsyncResult.Success(data!))
+                completion(AsyncResult.success(data!))
             }
         }
     }

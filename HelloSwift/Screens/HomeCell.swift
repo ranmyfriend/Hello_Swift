@@ -41,9 +41,9 @@ class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func populateValues(model:Data) {
+    open func populateValues(_ model:Data) {
         let createdAtDoubleValue = Double(model.created!)
-        let createdAtDate = NSDate(timeIntervalSince1970:createdAtDoubleValue/1000.0)
+        let createdAtDate = Date(timeIntervalSince1970:createdAtDoubleValue/1000.0)
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd, yyyy"
 
@@ -71,21 +71,21 @@ class HomeCell: UITableViewCell {
     }
     
     // MARK:: Private Functions
-    private func createViews() {
+    fileprivate func createViews() {
       self.availableWidth = Constants.SCREEN_WIDTH - (2*leftInset)
 
         self.createdAt = UILabel.init(frame: CGRect(x:leftInset, y:topInset, width:availableWidth!, height:dummyHeight))
-        self.createdAt?.font = .appThemeRegularFontWithSize(size: 13)
+        self.createdAt?.font = .appThemeRegularFontWithSize(13)
         self.createdAt?.textAlignment = .right
         self.addSubview(self.createdAt!)
         
         self.titleLabel = UILabel.init(frame: CGRect(x:leftInset, y:topInset, width:availableWidth!+20, height:dummyHeight))
-        self.titleLabel?.font = .appThemeRegularFontWithSize(size: 15)
+        self.titleLabel?.font = .appThemeRegularFontWithSize(15)
         self.titleLabel?.textColor = .blue
         self.addSubview(self.titleLabel!)
 
         self.bodyTextView = UITextView.init(frame: CGRect(x:leftInset, y:(self.titleLabel?.frame.maxY)!+20, width:availableWidth!, height:dummyHeight))
-        self.bodyTextView?.font = .appThemeRegularFontWithSize(size: 17)
+        self.bodyTextView?.font = .appThemeRegularFontWithSize(17)
         self.bodyTextView?.textColor = .black
         self.addSubview(self.bodyTextView!)
         
@@ -97,7 +97,7 @@ class HomeCell: UITableViewCell {
     
     
     // MARK:: Class Methods
-   class public func useIdentifier() -> String {
+   class open func useIdentifier() -> String {
         return "homeCellIdentifier"
     }
 

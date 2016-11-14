@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DKImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HelloSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6632DC886E5D4705C09A18C6CCD38724</key>
+		<key>7006EE2A2E68085872A8E679551C4ACC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3DED0829519DA86EAFE89C833A0D682</key>
+		<key>E7DE6DA79AC7D9E533A8C17D8AA63087</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FCF19159365A13D68B74E071253C07D0</key>
+		<key>F046D47557AFA44C5B12D84054180F53</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F29AF9441B3107A70E8BF723A47C1546</key>
 		<dict>
 			<key>primary</key>
 			<true/>

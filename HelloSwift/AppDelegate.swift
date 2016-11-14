@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // MARK:: We are using REST API for BackEndLess
         let baseURL = "https://api.backendless.com"
         let versionNumber = "v1"
-        FLDataCenter.sharedInstance .setBaseDomain(domain: baseURL+"/"+versionNumber+"/")
+        FLDataCenter.sharedInstance .setBaseDomain(baseURL+"/"+versionNumber+"/")
     }
     
     func setupNavigationBarTheme() {

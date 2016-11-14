@@ -8,7 +8,7 @@
 
 extension UIViewController {
     
-    func showAlert(title:String?, message:String?) {
+    func showAlert(_ title:String?, message:String?) {
         let alertController = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         let okButtonAction = UIAlertAction.init(title: "Okay", style: .default, handler: nil)
         alertController.addAction(okButtonAction)

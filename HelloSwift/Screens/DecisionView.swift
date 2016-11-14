@@ -35,7 +35,7 @@ class DecisionView: BaseView {
         self.loginButton?.backgroundColor = .black
         self.loginButton?.setTitle("Login", for: .normal)
         self.loginButton?.setTitleColor(.white, for: .normal)
-        self.loginButton?.titleLabel?.font = .appThemeBoldFontWithSize(size: 17)
+        self.loginButton?.titleLabel?.font = .appThemeBoldFontWithSize(17)
         self.loginButton?.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
         self.loginButton?.titleLabel?.textAlignment = .center
         self.addSubview(self.loginButton!)
@@ -44,7 +44,7 @@ class DecisionView: BaseView {
         self.signupButton?.backgroundColor = .black
         self.signupButton?.setTitle("Signup", for: .normal)
         self.signupButton?.setTitleColor(.white, for: .normal)
-        self.signupButton?.titleLabel?.font = .appThemeBoldFontWithSize(size: 17)
+        self.signupButton?.titleLabel?.font = .appThemeBoldFontWithSize(17)
         self.signupButton?.addTarget(self, action: #selector(didTapSignupButton), for: .touchUpInside)
         self.signupButton?.titleLabel?.textAlignment = .center
         self.addSubview(self.signupButton!)

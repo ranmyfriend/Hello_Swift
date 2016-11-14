@@ -13,9 +13,9 @@ private let leftMargin:CGFloat = 25.0
 
 class BackNavigationButtonView: UIView {
 
-    public var selector: Any?
-    weak public var target: AnyObject?
-    private var clickButton: UIButton?
+    open var selector: Any?
+    weak open var target: AnyObject?
+    fileprivate var clickButton: UIButton?
     
     init(frame:CGRect, target:AnyObject, selection:Any) {
         self.target = target
@@ -34,7 +34,7 @@ class BackNavigationButtonView: UIView {
     }
     
     // MARK:: Private Functions
-    private func createViews() {
+    fileprivate func createViews() {
         self.clickButton = UIButton()
         self.clickButton?.setTitleColor(UIColor(colorLiteralRed:51.0/255.0, green:51.0/255.0, blue:51.0/255.0, alpha:1.0), for: .normal)
         self.clickButton?.setTitleColor(UIColor(colorLiteralRed:213.0/255.0, green:213.0/255.0, blue:213.0/255.0, alpha:1.0), for: .highlighted)
@@ -51,6 +51,6 @@ class BackNavigationButtonView: UIView {
         self.addSubview(self.clickButton!)
     }
     
-    @objc private func didTapClickButton() {}
+    @objc fileprivate func didTapClickButton() {}
 
 }

@@ -12,7 +12,7 @@ private let backButtonText = ""
 
 class NavigationBarManager: NSObject {
     
-    public var barItemsFactory:BarButtonItemsFactory?
+    open var barItemsFactory:BarButtonItemsFactory?
 
     class var sharedInstance: NavigationBarManager {
         struct Static {
@@ -28,38 +28,38 @@ class NavigationBarManager: NSObject {
     }
     
     //MARK:: Public Functions
-    public func applyProperties(key:String, viewController:UIViewController, titleView:UIView?) {
-        self.backButtonSettingsForViewController(viewController: viewController)
+    open func applyProperties(_ key:String, viewController:UIViewController, titleView:UIView?) {
+        self.backButtonSettingsForViewController(viewController)
         if (titleView != nil) {
             viewController.navigationItem.titleView = titleView
         }
-        let navBarDictionary = self.navBarDictForKey(propertyKey:key)
+        let navBarDictionary = self.navBarDictForKey(key)
         if (navBarDictionary["left"] != nil)  {
-            let leftBarButtonArray = self.barButtonItemsFromDictionaryArr(dictArr: navBarDictionary["left"] as! [[String : String]], forViewController: viewController)
+            let leftBarButtonArray = self.barButtonItemsFromDictionaryArr(navBarDictionary["left"] as! [[String : String]], forViewController: viewController)
             viewController.navigationItem.hidesBackButton = true
             viewController.navigationItem.setLeftBarButtonItems(leftBarButtonArray,animated: true)
         }
         if(navBarDictionary["right"] != nil) {
-            let rightBarButtonArray = self.barButtonItemsFromDictionaryArr(dictArr: navBarDictionary["right"] as! [[String : String]], forViewController: viewController)
+            let rightBarButtonArray = self.barButtonItemsFromDictionaryArr(navBarDictionary["right"] as! [[String : String]], forViewController: viewController)
             viewController.navigationItem.setRightBarButtonItems(rightBarButtonArray, animated: false)
         }
     }
     
     //MARK:: Utitility methods.
-    fileprivate func barButtonItemsFromDictionaryArr(dictArr:[[String:String]], forViewController:UIViewController) ->[UIBarButtonItem]? {
+    fileprivate func barButtonItemsFromDictionaryArr(_ dictArr:[[String:String]], forViewController:UIViewController) ->[UIBarButtonItem]? {
         if (dictArr.count == 0) {
             return nil
         }
         var barButtons = [UIBarButtonItem]()
         for dict in dictArr {
-            if let barButtonItem = self.barItemsFactory?.barButtonItemForDictionary(navBarDict:dict, viewController: forViewController) {
+            if let barButtonItem = self.barItemsFactory?.barButtonItemForDictionary(dict, viewController: forViewController) {
                 barButtons.append(barButtonItem)
             }
         }
         return barButtons
     }
     
-    fileprivate func backButtonSettingsForViewController(viewController: UIViewController) {
+    fileprivate func backButtonSettingsForViewController(_ viewController: UIViewController) {
         viewController.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back_icon")
         viewController.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back_icon")
         let backItem = UIBarButtonItem(title: backButtonText, style: .plain, target: nil, action: nil)
@@ -68,7 +68,7 @@ class NavigationBarManager: NSObject {
     
     
     //MARK:: Private Functions - Navigation Bar methods.
-    fileprivate func navBarDictForKey(propertyKey:String) -> [String:Any] {
+    fileprivate func navBarDictForKey(_ propertyKey:String) -> [String:Any] {
         let navigationbarDictionary = self.navigationBarData() 
         return navigationbarDictionary![propertyKey] as! [String:Any]
     }

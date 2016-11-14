@@ -28,17 +28,17 @@ class SignupViewController: BaseViewController,signupViewProtocol {
     
     // MARK:: SignupViewProtocol methods
     
-    func didTapSignupButton(userName: String?, email: String?, password: String?) {
+    func didTapSignupButton(_ userName: String?, email: String?, password: String?) {
         
         if (email?.isEmpty)! {
-            self.showAlert(title: "Hello", message: "Please enter your fucking email id?")
+            self.showAlert("Hello", message: "Please enter your fucking email id?")
         }else if let check = email?.isEmail() , check == true {
-            self.showAlert(title: "Hello", message: "Are you sure is this Email?")
+            self.showAlert("Hello", message: "Are you sure is this Email?")
         }else if(password?.isEmpty)! {
-            self.showAlert(title: "Hello", message: "Please enter your fucking email Password?")
+            self.showAlert("Hello", message: "Please enter your fucking email Password?")
         }else {
-            self.myView.showLoadingViewWithMessage(message: Constants.pleaseWaitCaption)
-            SignUpDataCenter.sharedInstance.signup(userName: userName, email: email, password: password!){(response, responseObject, error) in
+            self.myView.showLoadingViewWithMessage(Constants.pleaseWaitCaption)
+            SignUpDataCenter.sharedInstance.signup(userName, email: email, password: password!){(response, responseObject, error) in
                 self.myView.hideLoadingView()
                 if (error != nil) {
                     print("Server reported an error: \(error)")

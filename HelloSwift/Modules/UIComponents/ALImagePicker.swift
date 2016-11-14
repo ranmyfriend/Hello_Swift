@@ -15,13 +15,13 @@ protocol ImagePickerProtocol {
 }
 
 class ALImagePicker: UIView {
-    public var delegate: ImagePickerProtocol?
+    open var delegate: ImagePickerProtocol?
 
-    private var bgView: UIView?
-    private var btnTakePhoto: UIButton?
-    private var btnCameraRoll: UIButton?
-    private var btnCancel: UIButton?
-    private var resignControl: UIControl?
+    fileprivate var bgView: UIView?
+    fileprivate var btnTakePhoto: UIButton?
+    fileprivate var btnCameraRoll: UIButton?
+    fileprivate var btnCancel: UIButton?
+    fileprivate var resignControl: UIControl?
 
     override init(frame:CGRect) {
         super.init(frame: frame)
@@ -51,7 +51,7 @@ class ALImagePicker: UIView {
     
     
     // MARK:: Public Functions
-    public func animateAndShow() {
+    open func animateAndShow() {
         self.bgView?.frame = CGRect(x:(self.bgView?.frame.minX)!, y:Constants.SCREEN_HEIGHT, width:(self.bgView?.frame.width)!, height:(self.bgView?.frame.height)!)
         
         UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveLinear, animations: { 
@@ -59,7 +59,7 @@ class ALImagePicker: UIView {
             }) { (finished) in }
     }
     
-    public func animateAndHide() {
+    open func animateAndHide() {
         self.bgView?.frame = CGRect(x:(self.bgView?.frame.minX)!, y:Constants.SCREEN_HEIGHT-200, width:(self.bgView?.frame.width)!, height:(self.bgView?.frame.height)!)
         
         UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveLinear, animations: {
@@ -69,9 +69,9 @@ class ALImagePicker: UIView {
     }
     
     // MARK:: Private Functions
-    private func createViews() {
+    fileprivate func createViews() {
         
-        self.backgroundColor = UIColor.rgba(fromHex: 0x000000, alpha: 0.3)
+        self.backgroundColor = UIColor.rgba(0x000000, alpha: 0.3)
         self.resignControl = UIControl()
         self.resignControl?.addTarget(self, action: #selector(didTapCancelButton), for: .touchUpInside)
         self.addSubview(self.resignControl!)
@@ -84,46 +84,46 @@ class ALImagePicker: UIView {
         self.btnTakePhoto = UIButton()
         self.btnTakePhoto?.backgroundColor = .clear
         self.btnTakePhoto?.setTitle("Take Photo", for: .normal)
-        self.btnTakePhoto?.setTitleColor(UIColor.rgb(fromHex: 0x9b9b9b), for: .normal)
-        self.btnTakePhoto?.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 18)
+        self.btnTakePhoto?.setTitleColor(UIColor.rgb(0x9b9b9b), for: .normal)
+        self.btnTakePhoto?.titleLabel?.font = UIFont.appThemeRegularFontWithSize(18)
         self.btnTakePhoto?.addTarget(self, action: #selector(didTapTakePhotoButton), for: .touchUpInside)
         self.btnTakePhoto?.layer.borderWidth = 1.0
-        self.btnTakePhoto?.layer.borderColor = UIColor.rgb(fromHex: 0x979797).cgColor
+        self.btnTakePhoto?.layer.borderColor = UIColor.rgb(0x979797).cgColor
         self.bgView?.addSubview(self.btnTakePhoto!)
 
         self.btnCameraRoll = UIButton()
         self.btnCameraRoll?.backgroundColor = .clear
         self.btnCameraRoll?.setTitle("Camera Roll", for: .normal)
-        self.btnCameraRoll?.setTitleColor(UIColor.rgb(fromHex: 0x9b9b9b), for: .normal)
-        self.btnCameraRoll?.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 18)
+        self.btnCameraRoll?.setTitleColor(UIColor.rgb(0x9b9b9b), for: .normal)
+        self.btnCameraRoll?.titleLabel?.font = UIFont.appThemeRegularFontWithSize(18)
         self.btnCameraRoll?.addTarget(self, action: #selector(didTapCameraRollButton), for: .touchUpInside)
         self.btnCameraRoll?.layer.borderWidth = 1.0
-        self.btnCameraRoll?.layer.borderColor = UIColor.rgb(fromHex: 0x979797).cgColor
+        self.btnCameraRoll?.layer.borderColor = UIColor.rgb(0x979797).cgColor
         self.bgView?.addSubview(self.btnCameraRoll!)
         
         self.btnCancel = UIButton()
-        self.btnCancel?.backgroundColor = UIColor.rgb(fromHex: 0xf5f5f5)
+        self.btnCancel?.backgroundColor = UIColor.rgb(0xf5f5f5)
         self.btnCancel?.setTitle("Cancel", for: .normal)
-        self.btnCancel?.setTitleColor(UIColor.rgb(fromHex: 0x9b9b9b), for: .normal)
-        self.btnCancel?.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 18)
+        self.btnCancel?.setTitleColor(UIColor.rgb(0x9b9b9b), for: .normal)
+        self.btnCancel?.titleLabel?.font = UIFont.appThemeRegularFontWithSize(18)
         self.btnCancel?.addTarget(self, action: #selector(didTapCancelButton), for: .touchUpInside)
         self.btnCancel?.layer.borderWidth = 1.0
-        self.btnCancel?.layer.borderColor = UIColor.rgb(fromHex: 0x979797).cgColor
+        self.btnCancel?.layer.borderColor = UIColor.rgb(0x979797).cgColor
         self.bgView?.addSubview(self.btnCancel!)
         
     }
     
-    @objc private func didTapCancelButton() {
+    @objc fileprivate func didTapCancelButton() {
         self.delegate?.didCancelImagePickerAction();
         self.animateAndHide()
     }
     
-    @objc private func didTapTakePhotoButton() {
+    @objc fileprivate func didTapTakePhotoButton() {
         self.delegate?.showCameraController();
         self.animateAndHide()
     }
     
-    @objc private func didTapCameraRollButton() {
+    @objc fileprivate func didTapCameraRollButton() {
         self.delegate?.showImagePickerController();
         self.animateAndHide()
     }

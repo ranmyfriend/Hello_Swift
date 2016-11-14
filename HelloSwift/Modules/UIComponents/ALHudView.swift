@@ -7,7 +7,7 @@
 //
 
 class ALHudView: UIView {
-    public var lblErrorMessage: UILabel?
+    open var lblErrorMessage: UILabel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -18,11 +18,11 @@ class ALHudView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createViews() {
+    fileprivate func createViews() {
         self.lblErrorMessage = UILabel()
         self.lblErrorMessage?.textAlignment = .center
         self.lblErrorMessage?.textColor = .white
-        self.lblErrorMessage?.font = .appThemeRegularFontWithSize(size: 12)
+        self.lblErrorMessage?.font = .appThemeRegularFontWithSize(12)
         self.addSubview(self.lblErrorMessage!)
     }
     

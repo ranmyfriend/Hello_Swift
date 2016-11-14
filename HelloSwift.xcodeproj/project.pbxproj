@@ -604,6 +604,7 @@
 					07FC6E161DBF490500A0632A = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = GWPPP8XM37;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};

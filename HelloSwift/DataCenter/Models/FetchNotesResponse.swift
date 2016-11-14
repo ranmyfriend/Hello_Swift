@@ -11,9 +11,9 @@ import SwiftyJSON
 public struct FetchNotesResponse {
 
   // MARK: Declaration for string constants to be used to decode and also serialize.
-  private let kFetchNotesResponseTotalObjectsKey: String = "totalObjects"
-  private let kFetchNotesResponseOffsetKey: String = "offset"
-  private let kFetchNotesResponseDataKey: String = "data"
+  fileprivate let kFetchNotesResponseTotalObjectsKey: String = "totalObjects"
+  fileprivate let kFetchNotesResponseOffsetKey: String = "offset"
+  fileprivate let kFetchNotesResponseDataKey: String = "data"
 
   // MARK: Properties
   public var totalObjects: Int?

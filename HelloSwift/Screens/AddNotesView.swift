@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddNotesProtocol: class {
-    func didTapSaveButton(title: String?, body: String?)
+    func didTapSaveButton(_ title: String?, body: String?)
 }
 
 class AddNotesView: BaseView {
@@ -28,17 +28,17 @@ class AddNotesView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createViews() {
+    fileprivate func createViews() {
         self.titleTextField = UITextField()
         self.titleTextField?.borderStyle = .roundedRect
         self.titleTextField?.placeholder = "Title"
-        self.titleTextField?.font = .appThemeBoldFontWithSize(size: 15)
+        self.titleTextField?.font = .appThemeBoldFontWithSize(15)
         self.addSubview(self.titleTextField!)
         
         self.bodyTextView = UITextView()
         self.bodyTextView?.layer.cornerRadius = 4.0
         self.bodyTextView?.clipsToBounds = true
-        self.bodyTextView?.font = .appThemeRegularFontWithSize(size: 15)
+        self.bodyTextView?.font = .appThemeRegularFontWithSize(15)
         self.bodyTextView?.layer.borderColor = UIColor.lightGray.cgColor
         self.bodyTextView?.layer.borderWidth = 0.5
         self.addSubview(self.bodyTextView!)
@@ -50,7 +50,7 @@ class AddNotesView: BaseView {
         self.saveButton?.setTitleColor(.white, for: .normal)
         self.saveButton?.backgroundColor = .blue
 
-        self.saveButton?.titleLabel?.font = .appThemeBoldFontWithSize(size: 17)
+        self.saveButton?.titleLabel?.font = .appThemeBoldFontWithSize(17)
         self.saveButton?.titleLabel?.textAlignment = .center
         self.addSubview(self.saveButton!)
     }
@@ -71,8 +71,8 @@ class AddNotesView: BaseView {
     }
     
     // MARK:: Selectors
-    @objc private func didTapSaveButton() {
-        self.delegate?.didTapSaveButton(title: self.titleTextField?.text, body: self.bodyTextView?.text)
+    @objc fileprivate func didTapSaveButton() {
+        self.delegate?.didTapSaveButton(self.titleTextField?.text, body: self.bodyTextView?.text)
     }
 
 }

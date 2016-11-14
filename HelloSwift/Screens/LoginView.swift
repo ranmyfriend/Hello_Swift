@@ -7,7 +7,7 @@
 //
 
 protocol loginViewProtocol: class {
-    func didTapSubmitButton(email:String?, password:String?)
+    func didTapSubmitButton(_ email:String?, password:String?)
 }
 
 class LoginView : BaseView {
@@ -41,25 +41,25 @@ class LoginView : BaseView {
         self.submitButton?.frame = CGRect(x:leftInset, y:((self.passwordTextField?.frame)!.maxY+50), width:availableWidth, height:(height+10))
     }
     
-   private func createViews() {
+   fileprivate func createViews() {
         
         self.backgroundColor = .white
         
         self.emailTextField = ALTextField()
-        self.emailTextField?.setPlaceHolder(placeHolder: "Email")
-        self.emailTextField?.setKeyboardType(keyboardType: .emailAddress)
+        self.emailTextField?.setPlaceHolder("Email")
+        self.emailTextField?.setKeyboardType(.emailAddress)
         self.addSubview(self.emailTextField!)
         
         self.passwordTextField = ALTextField()
-        self.passwordTextField?.setPlaceHolder(placeHolder: "Password")
-        self.passwordTextField?.setKeyboardType(keyboardType: .default)
+        self.passwordTextField?.setPlaceHolder("Password")
+        self.passwordTextField?.setKeyboardType(.default)
         self.addSubview(self.passwordTextField!)
         
         self.submitButton = UIButton()
         self.submitButton?.backgroundColor = .black
         self.submitButton?.setTitle("Submit", for: .normal)
         self.submitButton?.setTitleColor(.white, for: .normal)
-        self.submitButton?.titleLabel?.font = .appThemeRegularFontWithSize(size: 17)
+        self.submitButton?.titleLabel?.font = .appThemeRegularFontWithSize(17)
         self.submitButton?.layer.cornerRadius = 4.0
         self.submitButton?.addTarget(self, action: #selector(didTapSubmitButton), for: .touchUpInside)
         self.addSubview(self.submitButton!)
@@ -67,13 +67,13 @@ class LoginView : BaseView {
     
     //MARK:: Selectors
     
-   @objc private func didTapSubmitButton() {
-        self.delegate?.didTapSubmitButton(email: self.emailTextField?.getText(), password: self.passwordTextField?.getText())
+   @objc fileprivate func didTapSubmitButton() {
+        self.delegate?.didTapSubmitButton(self.emailTextField?.getText(), password: self.passwordTextField?.getText())
     }
     
     //MARK:: Public Functions
     
-    public func cleanup() {
+    open func cleanup() {
         self.emailTextField?.textField?.text = nil
         self.passwordTextField?.textField?.text = nil
     }

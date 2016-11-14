@@ -10,11 +10,11 @@ import UIKit
 
 class ALLabel: UILabel {
 
-    public var padding:UIEdgeInsets?
+    open var padding:UIEdgeInsets?
     
     override init(frame:CGRect) {
         super.init(frame: frame)
-        self.textColor = UIColor.rgb(fromHex: 0x4A4A4A)
+        self.textColor = UIColor.rgb(0x4A4A4A)
     }
     
     required init?(coder aDecoder: NSCoder) {

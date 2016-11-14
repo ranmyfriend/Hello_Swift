@@ -25,7 +25,7 @@ class BaseNavigationViewController: UINavigationController {
 
     //MARK:: Public Functions
     
-    public func pushPreLoginScreen() {
+    open func pushPreLoginScreen() {
         if(self.decisionViewController == nil) {
             self.decisionViewController = DecisionViewController()
         }
@@ -38,7 +38,7 @@ class BaseNavigationViewController: UINavigationController {
         }
     }
     
-    public func pushHomeScreen() {
+    open func pushHomeScreen() {
         if (self.homeViewController == nil) {
             self.homeViewController = HomeViewController()
         }
@@ -52,10 +52,10 @@ class BaseNavigationViewController: UINavigationController {
     
     // MARK:: Private Functions
     
-    private func navigationBarSetup() {
+    fileprivate func navigationBarSetup() {
         self.navigationBar.barTintColor = .green
         self.navigationBar.isTranslucent = false
         self.navigationBar.tintColor = .white
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.appThemeRegularFontWithSize(size: 18)]
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.appThemeRegularFontWithSize(18)]
     }
 }

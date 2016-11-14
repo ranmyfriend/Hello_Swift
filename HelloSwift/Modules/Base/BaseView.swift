@@ -22,9 +22,9 @@ enum ErrorHudBgColor {
 
 class BaseView: UIView {
     
-    private var loadingView: ALLoadingView?
-    private var errorHudView: ALHudView?
-    private var isErrorHudAnimating: Bool?
+    fileprivate var loadingView: ALLoadingView?
+    fileprivate var errorHudView: ALHudView?
+    fileprivate var isErrorHudAnimating: Bool?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,8 +35,8 @@ class BaseView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createViews() {
-        self.backgroundColor = UIColor.rgb(fromHex: 0xf3f3f3);
+    fileprivate func createViews() {
+        self.backgroundColor = UIColor.rgb(0xf3f3f3);
         self.loadingView = ALLoadingView()
     }
     
@@ -44,12 +44,12 @@ class BaseView: UIView {
         super.layoutSubviews()
     }
     
-    public func showLoadingViewWithMessage(message: String) {
+    open func showLoadingViewWithMessage(_ message: String) {
         if(self.loadingView == nil) {
             self.loadingView = ALLoadingView()
         }
         self.loadingView?.frame = CGRect(x:0, y:0, width:Constants.SCREEN_WIDTH, height:Constants.SCREEN_HEIGHT)
-        self.loadingView?.backgroundColor = UIColor.rgba(fromHex: 0x000, alpha: 0.6)
+        self.loadingView?.backgroundColor = UIColor.rgba(0x000, alpha: 0.6)
         if(!(UIApplication.shared.keyWindow?.subviews.contains(self.loadingView!))!) {
             UIApplication.shared.keyWindow?.addSubview(self.loadingView!)
         }
@@ -63,7 +63,7 @@ class BaseView: UIView {
         self.loadingView?.startAnimatingLoader()
     }
     
-    public func hideLoadingView() {
+    open func hideLoadingView() {
         // Safer zone to find the loading view and remove it from SuperView
         
         var found: Bool = false
@@ -81,7 +81,7 @@ class BaseView: UIView {
         self.loadingView?.removeFromSuperview()
     }
     
-    public func showErrorHud(position: ErrorHudPosition, message:String, bgColor: ErrorHudBgColor) {
+    open func showErrorHud(_ position: ErrorHudPosition, message:String, bgColor: ErrorHudBgColor) {
         if(self.errorHudView == nil) {
             self.errorHudView = ALHudView()
         }
@@ -97,10 +97,10 @@ class BaseView: UIView {
         }
         switch bgColor {
         case .red:
-            self.errorHudView?.backgroundColor = UIColor.rgb(fromHex:0xc0392b)
+            self.errorHudView?.backgroundColor = UIColor.rgb(0xc0392b)
             break
         case .blue:
-            self.errorHudView?.backgroundColor = UIColor.rgb(fromHex:0x3498db)
+            self.errorHudView?.backgroundColor = UIColor.rgb(0x3498db)
             break
         }
         switch position {
@@ -113,7 +113,7 @@ class BaseView: UIView {
         }
     }
     
-    private func animateFromTop() {
+    fileprivate func animateFromTop() {
         //Note: dont want to create duplicate huds
         if self.isErrorHudAnimating! { return }
         
@@ -131,7 +131,7 @@ class BaseView: UIView {
         }
     }
     
-    private func animateFromBottom() {
+    fileprivate func animateFromBottom() {
         if self.isErrorHudAnimating! { return }
 
         self.errorHudView?.frame = CGRect(x:0, y:(self.bounds.height+errorHudHeight), width:self.bounds.width, height:errorHudHeight)

@@ -9,7 +9,7 @@
 import TextFieldEffects
 
 protocol signupViewProtocol: class {
-    func didTapSignupButton(userName:String?, email:String?, password:String?)
+    func didTapSignupButton(_ userName:String?, email:String?, password:String?)
 }
 
 class SignupView: BaseView,UITextFieldDelegate {
@@ -30,7 +30,7 @@ class SignupView: BaseView,UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createViews() {
+    fileprivate func createViews() {
         
         self.backgroundColor = .white
         
@@ -41,9 +41,9 @@ class SignupView: BaseView,UITextFieldDelegate {
         self.emailTextField?.delegate = self
         self.emailTextField?.returnKeyType = .next
         self.emailTextField?.borderStyle = .roundedRect
-        self.emailTextField?.font = UIFont.appThemeRegularFontWithSize(size: 16)
+        self.emailTextField?.font = UIFont.appThemeRegularFontWithSize(16)
         self.emailTextField?.placeholderColor = .lightGray
-        self.emailTextField?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(size: 16)
+        self.emailTextField?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(16)
         self.addSubview(self.emailTextField!)
         
         self.userNameTextFiled = HoshiTextField()
@@ -53,9 +53,9 @@ class SignupView: BaseView,UITextFieldDelegate {
         self.userNameTextFiled?.delegate = self
         self.userNameTextFiled?.returnKeyType = .next
         self.userNameTextFiled?.borderStyle = .roundedRect
-        self.userNameTextFiled?.font = UIFont.appThemeRegularFontWithSize(size: 16)
+        self.userNameTextFiled?.font = UIFont.appThemeRegularFontWithSize(16)
         self.userNameTextFiled?.placeholderColor = .lightGray
-        self.userNameTextFiled?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(size: 16)
+        self.userNameTextFiled?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(16)
         self.addSubview(self.userNameTextFiled!)
         
         self.passwordTextField = HoshiTextField()
@@ -66,16 +66,16 @@ class SignupView: BaseView,UITextFieldDelegate {
         self.passwordTextField?.returnKeyType = .go
         self.passwordTextField?.isSecureTextEntry = true
         self.passwordTextField?.borderStyle = .roundedRect
-        self.passwordTextField?.font = UIFont.appThemeRegularFontWithSize(size: 16)
+        self.passwordTextField?.font = UIFont.appThemeRegularFontWithSize(16)
         self.passwordTextField?.placeholderColor = .lightGray
-        self.passwordTextField?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(size: 16)
+        self.passwordTextField?.placeholderLabel.font = UIFont.appThemeLightFontWithSize(16)
         self.addSubview(self.passwordTextField!)
         
         self.submitButton = UIButton()
         self.submitButton?.backgroundColor = .black
         self.submitButton?.setTitle("Submit", for: .normal)
         self.submitButton?.setTitleColor(.white, for: .normal)
-        self.submitButton?.titleLabel?.font = .appThemeRegularFontWithSize(size: 17)
+        self.submitButton?.titleLabel?.font = .appThemeRegularFontWithSize(17)
         self.submitButton?.layer.cornerRadius = 4.0
         self.submitButton?.addTarget(self, action: #selector(didTapSubmitButton), for: .touchUpInside)
         self.addSubview(self.submitButton!)
@@ -101,7 +101,7 @@ class SignupView: BaseView,UITextFieldDelegate {
     // MARK:: Selectors
     
     @objc private func didTapSubmitButton() {
-        self.delegate?.didTapSignupButton(userName: self.userNameTextFiled?.text, email: self.emailTextField?.text, password: self.passwordTextField?.text)
+        self.delegate?.didTapSignupButton(self.userNameTextFiled?.text, email: self.emailTextField?.text, password: self.passwordTextField?.text)
     }
     
     // MARK:: Public Functions

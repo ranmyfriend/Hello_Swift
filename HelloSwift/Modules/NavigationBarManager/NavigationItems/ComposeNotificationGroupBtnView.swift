@@ -12,13 +12,13 @@ fileprivate let INTER_BUTTON_SPACING:CGFloat = 8.0
 
 // Adding @objc keyword infront of protocol, you can make these func's as optional
 @objc protocol ComposeNotificationGroupBtnViewProtocol:class {
-    @objc optional func didTapComposeBtn(sender:Any)
-    @objc optional func didTapSearchBtn(sender:Any)
+    @objc optional func didTapComposeBtn(_ sender:Any)
+    @objc optional func didTapSearchBtn(_ sender:Any)
 }
 
 class ComposeNotificationGroupBtnView: UIView {
     
-    weak public var delegate: ComposeNotificationGroupBtnViewProtocol?
+    weak open var delegate: ComposeNotificationGroupBtnViewProtocol?
     fileprivate var composeButton: UIButton?
     
     override init(frame:CGRect) {
@@ -30,7 +30,7 @@ class ComposeNotificationGroupBtnView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func createViews() {
+    fileprivate func createViews() {
         let composeImage = UIImage(named: "compose")
         self.composeButton = UIButton(frame:(CGRect(x:INTER_BUTTON_SPACING, y:0, width:(composeImage?.size.width)!+INTER_BUTTON_SPACING, height:44)))
         self.composeButton?.setImage(composeImage, for: .normal)
@@ -45,11 +45,11 @@ class ComposeNotificationGroupBtnView: UIView {
         
     }
     
-    @objc private func didTapComposeButton(object:Any) {
+    @objc fileprivate func didTapComposeButton(_ object:Any) {
         self.delegate?.didTapComposeBtn!(sender: object)
     }
     
-    @objc private func didTapSearchButton(object:Any) {
+    @objc fileprivate func didTapSearchButton(_ object:Any) {
         self.delegate?.didTapSearchBtn!(sender: object)
     }
 

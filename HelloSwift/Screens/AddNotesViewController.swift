@@ -27,23 +27,23 @@ class AddNotesViewController: BaseViewController,AddNotesProtocol {
     }
     
     //MARK:: AddNotes Protocol methods
-    func didTapSaveButton(title: String?, body: String?) {
+    func didTapSaveButton(_ title: String?, body: String?) {
         if (title?.isEmpty)! {
-            self.showAlert(title: "Hello", message: "Please drop some Title?")
+            self.showAlert("Hello", message: "Please drop some Title?")
         }else {
-            self.myView.showLoadingViewWithMessage(message:Constants.savingNotesCaption)
-            NotesActionsDataCenter.sharedInstance.addNotes(title: title, bodyText: body, completion:
+            self.myView.showLoadingViewWithMessage(Constants.savingNotesCaption)
+            NotesActionsDataCenter.sharedInstance.addNotes(title, bodyText: body, completion:
                 { (result) in
                     self.myView.hideLoadingView()
                     switch result
                     {
-                    case .Success(let note):
+                    case .success(let note):
                         print(note!)
                         // Here if you dont give _ compiler will give warning - Expression of type uiviewcontroller is unused
                         //http://stackoverflow.com/questions/37843049/xcode-8-swift-3-expression-of-type-uiviewcontroller-is-unused-warning
                         _ = self.navigationController?.popViewController(animated: true)
                         break
-                    case .Failure(let error):
+                    case .failure(let error):
                         print(error!)
                         break
                     }

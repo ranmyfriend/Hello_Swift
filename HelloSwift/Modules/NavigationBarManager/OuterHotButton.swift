@@ -13,8 +13,8 @@ private let outerMargin:CGFloat = 15.0
 class OuterHotButton: UIButton {
 
     //these default to OUTER_MARGIN if not set
-    public var yTapExtension:CGFloat?
-    public var xTapExtension:CGFloat?
+    open var yTapExtension:CGFloat?
+    open var xTapExtension:CGFloat?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,11 +26,11 @@ class OuterHotButton: UIButton {
         self.commonInit()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         self.createViews()
     }
     
-    private func createViews() {
+    fileprivate func createViews() {
         self.clipsToBounds = false
         self.yTapExtension = outerMargin;
         self.xTapExtension = outerMargin;

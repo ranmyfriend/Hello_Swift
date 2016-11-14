@@ -10,16 +10,16 @@ import UIKit
 
 protocol MyTextFieldProtocol:class {
 
-    func didBeginEditing(view:UIView)
-    func didEndEditing(view:UIView)
-    func didTapReturnKey(view:UIView)
+    func didBeginEditing(_ view:UIView)
+    func didEndEditing(_ view:UIView)
+    func didTapReturnKey(_ view:UIView)
 }
 
 class ALTextField: UIView,UITextFieldDelegate {
 
-    public var textField: UITextField?
-    public var nextTextField: ALTextField?
-    private var separator: UIView?
+    open var textField: UITextField?
+    open var nextTextField: ALTextField?
+    fileprivate var separator: UIView?
     
     var delegate: MyTextFieldProtocol?
     
@@ -33,80 +33,80 @@ class ALTextField: UIView,UITextFieldDelegate {
     }
     
     // MARK:: Public Functions
-    public func setPlaceHolder(placeHolder:String){
+    open func setPlaceHolder(_ placeHolder:String){
         self.textField?.placeholder = placeHolder
         if(placeHolder.characters.count > 0) {
-            let color:UIColor = UIColor.rgb(fromHex:0xdcdada)
-            self.textField?.attributedPlaceholder = NSAttributedString.init(string: placeHolder, attributes: [NSForegroundColorAttributeName:color, NSFontAttributeName:UIFont.appThemeRegularFontWithSize(size:16)])
+            let color:UIColor = UIColor.rgb(0xdcdada)
+            self.textField?.attributedPlaceholder = NSAttributedString.init(string: placeHolder, attributes: [NSForegroundColorAttributeName:color, NSFontAttributeName:UIFont.appThemeRegularFontWithSize(16)])
         }
     }
     
-    public func setKeyboardType(keyboardType:UIKeyboardType){
+    open func setKeyboardType(_ keyboardType:UIKeyboardType){
         self.textField?.keyboardType = keyboardType
     }
     
-    public func setReturnKeyType(returnKeyType:UIReturnKeyType){
+    open func setReturnKeyType(_ returnKeyType:UIReturnKeyType){
         self.textField?.returnKeyType = returnKeyType
     }
     
-    public func setTextFieldToPasswordMode(){
+    open func setTextFieldToPasswordMode(){
         self.textField?.isSecureTextEntry = true
     }
     
-    public func makeFirstResponder(){
+    open func makeFirstResponder(){
         self.textField?.becomeFirstResponder()
     }
     
-    public func setupInputView(inputView:UIView){
+    open func setupInputView(_ inputView:UIView){
         self.textField?.inputView = inputView;
     }
     
-    public func verifyNumberOnly() ->Bool {
+    open func verifyNumberOnly() ->Bool {
         return (self.textField?.text?.isNumberOnly())!
     }
     
-    public func verifyEmailOnly() ->Bool {
+    open func verifyEmailOnly() ->Bool {
         return (self.textField?.text?.isEmail())!
     }
     
-    public func isEmpty() ->Bool {
+    open func isEmpty() ->Bool {
         if(self.textField?.text?.isEmpty)! {
             return true
         }
         return false
     }
     
-    public func getText() ->String {
+    open func getText() ->String {
         return (self.textField?.text)!
     }
     
     // MARK:: UITextField Delegate methods
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.delegate?.didBeginEditing(view:self)
+        self.delegate?.didBeginEditing(self)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.textField?.resignFirstResponder()
-        self.delegate?.didEndEditing(view:self)
+        self.delegate?.didEndEditing(self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.textField?.resignFirstResponder()
         self.nextTextField?.makeFirstResponder()
-        self.delegate?.didTapReturnKey(view:self)
+        self.delegate?.didTapReturnKey(self)
         return true
     }
     
     // MARK:: Private Functions
     
-    private func createViews() {
+    fileprivate func createViews() {
         self.backgroundColor = .clear
         self.textField = UITextField()
         self.textField?.backgroundColor = .white
         self.textField?.textAlignment = .left
         self.textField?.keyboardType = .default
-        self.textField?.font = UIFont.appThemeRegularFontWithSize(size: 16)
+        self.textField?.font = UIFont.appThemeRegularFontWithSize(16)
         self.textField?.textColor = .black
         self.textField?.delegate = self
         self.textField?.returnKeyType = .done
@@ -116,7 +116,7 @@ class ALTextField: UIView,UITextFieldDelegate {
         self.addSubview(self.textField!)
         
         self.separator = UIView()
-        self.separator?.backgroundColor = UIColor.rgb(fromHex: 0xdcdada)
+        self.separator?.backgroundColor = UIColor.rgb(0xdcdada)
         self.addSubview(self.separator!)
         
         self.clipsToBounds = true

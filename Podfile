@@ -6,5 +6,6 @@ target 'HelloSwift' do
     pod 'Alamofire', '~> 4.0.1'
     pod 'SwiftyJSON', '~> 3.1'
     pod 'TextFieldEffects'
+    pod 'DKImagePickerController'
 
 end

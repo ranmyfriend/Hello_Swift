@@ -8,43 +8,43 @@
 
 extension UIFont {
     
-   class func appThemeRegularFontWithSize(size: CGFloat) -> UIFont {
+   class func appThemeRegularFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "ProximaNova-Regular", size: size)!
     }
     
-    class func appThemeBoldFontWithSize(size: CGFloat) -> UIFont {
+    class func appThemeBoldFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "ProximaNova-Bold", size: size)!
     }
     
-    class func appThemeMediumFontWithSize(size: CGFloat) -> UIFont {
+    class func appThemeMediumFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "ProximaNova-Semibold", size: size)!
     }
     
-    class func appThemeLightFontWithSize(size: CGFloat) -> UIFont {
+    class func appThemeLightFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "ProximaNova-Light", size: size)!
     }
     
-    class func robotoRegularFontWithSize(size: CGFloat) -> UIFont {
+    class func robotoRegularFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Regular", size: size)!
     }
     
-    class func robotoBoldFontWithSize(size: CGFloat) -> UIFont {
+    class func robotoBoldFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Bold", size: size)!
     }
     
-    class func robotoMediumFontWithSize(size: CGFloat) -> UIFont {
+    class func robotoMediumFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Medium", size: size)!
     }
     
-    class func robotoLightFontWithSize(size: CGFloat) -> UIFont {
+    class func robotoLightFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Light", size: size)!
     }
     
-    class func robotoThinFontWithSize(size: CGFloat) -> UIFont {
+    class func robotoThinFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Thin", size: size)!
     }
     
-    class func robotoBlackFontWithSize(size: CGFloat) -> UIFont {
+    class func robotoBlackFontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Black", size: size)!
     }
     

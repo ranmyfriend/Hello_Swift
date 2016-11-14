@@ -11,12 +11,12 @@ import SwiftyJSON
 public struct Data {
 
   // MARK: Declaration for string constants to be used to decode and also serialize.
-  private let kDataMetaKey: String = "__meta"
-  private let kDataClassKey: String = "___class"
-  private let kDataCreatedKey: String = "created"
-  private let kDataTitleKey: String = "Title"
-  private let kDataObjectIdKey: String = "objectId"
-  private let kDataBodyKey: String = "Body"
+  fileprivate let kDataMetaKey: String = "__meta"
+  fileprivate let kDataClassKey: String = "___class"
+  fileprivate let kDataCreatedKey: String = "created"
+  fileprivate let kDataTitleKey: String = "Title"
+  fileprivate let kDataObjectIdKey: String = "objectId"
+  fileprivate let kDataBodyKey: String = "Body"
 
   // MARK: Properties
   public var meta: String?

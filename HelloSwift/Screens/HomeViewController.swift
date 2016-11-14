@@ -49,23 +49,23 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     
     // MARK:: Selectors
     
-    @objc private func didTapAddNotesButton() {
+    @objc fileprivate func didTapAddNotesButton() {
         let addNotesViewController = AddNotesViewController()
         self.navigationController?.pushViewController(addNotesViewController, animated: true)
     }
     
-    @objc private func didTapLogoutButton() {}
+    @objc fileprivate func didTapLogoutButton() {}
     
     func fetchNotes() {
-        self.myView.showLoadingViewWithMessage(message: Constants.fetchNotesCaption)
+        self.myView.showLoadingViewWithMessage(Constants.fetchNotesCaption)
         NotesActionsDataCenter.sharedInstance.fetchNotes { (result) in
             self.myView.hideLoadingView()
             switch result
             {
-            case .Success(let notes):
+            case .success(let notes):
                 self.dataSource = notes
                 break
-            case .Failure(let error):
+            case .failure(let error):
                 print(error!)
                 break
             }
@@ -74,19 +74,19 @@ class HomeViewController: BaseViewController,UITableViewDelegate,UITableViewData
     
     // MARK:: TableView Delegate Functions
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataSource.count
     }
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let homeCell = self.tableView(tableView, cellForRowAt: indexPath) as! HomeCell
         return homeCell.getHeight()
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let homeCell = tableView.dequeueReusableCell(withIdentifier: HomeCell.useIdentifier()) as! HomeCell
         let data = self.dataSource[indexPath.row] as Data
-        homeCell.populateValues(model: data)
+        homeCell.populateValues(data)
         return homeCell
     }
     

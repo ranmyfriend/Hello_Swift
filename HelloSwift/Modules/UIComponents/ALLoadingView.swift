@@ -10,9 +10,9 @@ import UIKit
 
 class ALLoadingView: UIView {
     
-    public var lblLoadingMessage: UILabel?
+    open var lblLoadingMessage: UILabel?
     
-    private var indicator: DGActivityIndicatorView?
+    fileprivate var indicator: DGActivityIndicatorView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,9 +34,9 @@ class ALLoadingView: UIView {
     }
     
     // MARK:: Private Functions
-    private func createViews() {
+    fileprivate func createViews() {
         
-        self.indicator = DGActivityIndicatorView.init(type: .ballPulse, tintColor: UIColor.rgb(fromHex: 0x5ABD3B), size: 80)
+        self.indicator = DGActivityIndicatorView.init(type: .ballPulse, tintColor: UIColor.rgb(0x5ABD3B), size: 80)
         self.indicator?.backgroundColor = .clear
         self.addSubview(self.indicator!)
         
@@ -44,7 +44,7 @@ class ALLoadingView: UIView {
         self.lblLoadingMessage?.text = ""
         self.lblLoadingMessage?.textColor = .white
         self.lblLoadingMessage?.textAlignment = .center
-        self.lblLoadingMessage?.font = .appThemeRegularFontWithSize(size: 14)
+        self.lblLoadingMessage?.font = .appThemeRegularFontWithSize(14)
         self.lblLoadingMessage?.backgroundColor = .clear
         self.lblLoadingMessage?.numberOfLines = 0
         self.addSubview(self.lblLoadingMessage!)
@@ -54,11 +54,11 @@ class ALLoadingView: UIView {
     }
     
     // MARK:: Public Functions
-    public func startAnimatingLoader() {
+    open func startAnimatingLoader() {
         self.indicator?.startAnimating()
     }
     
-    public func stopAnimatingLoader() {
+    open func stopAnimatingLoader() {
         self.indicator?.stopAnimating()
     }
 

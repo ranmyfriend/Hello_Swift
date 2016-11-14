@@ -13,8 +13,8 @@ private let circleInThicknessRatio:CGFloat = 0.25
 
 class ALLoadingCell: UITableViewCell {
     
-    private var circleViewOut: DACircularProgressView?
-    private var circleViewIn: DACircularProgressView?
+    fileprivate var circleViewOut: DACircularProgressView?
+    fileprivate var circleViewIn: DACircularProgressView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,13 +66,13 @@ class ALLoadingCell: UITableViewCell {
     
     // MARK:: Public Functions
     
-    class public func reuseIdentifier() -> String {
+    class open func reuseIdentifier() -> String {
         return "LoadingCell"
     }
     
     // MARK:: Private Functions
     
-    private func createViews() {
+    fileprivate func createViews() {
         self.backgroundColor = .white
         
         self.circleViewOut = DACircularProgressView()
@@ -102,7 +102,7 @@ class ALLoadingCell: UITableViewCell {
         self.circleViewIn?.setProgress(0.9, animated: false)
     }
     
-    private func statAnimatingCell() {
+    fileprivate func statAnimatingCell() {
         if(!(self.circleViewOut?.layer.animationKeys()?.contains("rotationAnimation"))!) {
             let multiplier: Double = 1000000.0
             let duration: TimeInterval = TimeInterval(multiplier)
@@ -124,7 +124,7 @@ class ALLoadingCell: UITableViewCell {
         }
     }
     
-    private func stopAnimatingCell() {
+    fileprivate func stopAnimatingCell() {
         self.circleViewOut?.layer.removeAllAnimations()
         self.circleViewIn?.layer.removeAllAnimations()
     }

@@ -17,7 +17,7 @@ class SignInDataCenter: NSObject {
         return Static.instance
     }
     
-    func signin(email:String?, password:String?, ReturnBlock:@escaping returnBlock) {
+    func signin(_ email:String?, password:String?, ReturnBlock:@escaping returnBlock) {
         
         let signinEndUrl = "users/login"
         
@@ -26,7 +26,7 @@ class SignInDataCenter: NSObject {
         parameters["login"] = email
         parameters["password"] = password
         
-        FLDataCenter.sharedInstance.POST(connectingURL: signinEndUrl, parameters: parameters) {
+        FLDataCenter.sharedInstance.POST(signinEndUrl, parameters: parameters) {
             (urlResponse, urlResponseObject, error) in
             ReturnBlock(urlResponse,urlResponseObject,error)
         }

@@ -17,7 +17,7 @@ class SignUpDataCenter: NSObject {
         return Static.instance
     }
 
-    func signup(userName:String?, email:String?, password:String, ReturnBlock:@escaping returnBlock){
+    func signup(_ userName:String?, email:String?, password:String, ReturnBlock:@escaping returnBlock){
 
         let signupEndUrl = "users/register"
         
@@ -27,7 +27,7 @@ class SignUpDataCenter: NSObject {
         parameters["password"] = password
         parameters["name"] = userName
                 
-        FLDataCenter.sharedInstance.POST(connectingURL: signupEndUrl, parameters: parameters) {
+        FLDataCenter.sharedInstance.POST(signupEndUrl, parameters: parameters) {
             (urlResponse, urlResponseObject, error) in
             
             ReturnBlock(urlResponse,urlResponseObject,error)

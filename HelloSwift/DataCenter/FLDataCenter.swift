@@ -13,7 +13,7 @@ typealias returnBlock = (URLResponse?, AnyObject?, Error?) -> Void
 
 class FLDataCenter: NSObject {
     
-   private var baseURL: String? = nil
+   fileprivate var baseURL: String? = nil
     
     class var sharedInstance: FLDataCenter {
         struct Static {
@@ -22,11 +22,11 @@ class FLDataCenter: NSObject {
         return Static.instance
     }
     
-    func setBaseDomain(domain:String) {
+    func setBaseDomain(_ domain:String) {
         self.baseURL = domain;
     }
     
-    func GET(connectingURL:String,
+    func GET(_ connectingURL:String,
              parameters:Dictionary<String,Any>?,
              ReturnBlock:@escaping returnBlock) {
         
@@ -52,7 +52,7 @@ class FLDataCenter: NSObject {
         }
     }
     
-    func POST(connectingURL:String,
+    func POST(_ connectingURL:String,
               parameters:Dictionary<String,Any>,
               ReturnBlock:@escaping returnBlock) {
         
@@ -79,7 +79,7 @@ class FLDataCenter: NSObject {
         }
     }
     
-    func PUT(connectingURL:String,
+    func PUT(_ connectingURL:String,
              parameters:Dictionary<String,Any>,
              ReturnBlock:@escaping returnBlock) {
         
@@ -106,7 +106,7 @@ class FLDataCenter: NSObject {
         }
     }
     
-    func DELETE(connectingURL:String,
+    func DELETE(_ connectingURL:String,
                 parameters:Dictionary<String,Any>,
                 ReturnBlock:@escaping returnBlock) {
         
@@ -133,7 +133,7 @@ class FLDataCenter: NSObject {
         }
     }
     
-    func PATCH(connectingURL:String,
+    func PATCH(_ connectingURL:String,
                parameters:Dictionary<String,Any>,
                ReturnBlock:@escaping returnBlock) {
         
@@ -160,7 +160,7 @@ class FLDataCenter: NSObject {
         }
     }
     
-    func POST(connectingURL:String,
+    func POST(_ connectingURL:String,
               image:UIImage,
               imageName:String,
               imageKey:String,
@@ -217,7 +217,7 @@ class FLDataCenter: NSObject {
         
     }
     
-    private func headers() -> Dictionary<String,String> {
+    fileprivate func headers() -> Dictionary<String,String> {
         let headers = ["application-id":"5836E8FC-4A51-E65E-FF4B-E684B637F100",
                        "secret-key":"7A7C25DB-A1C2-5587-FF3E-CEC9B684CE00",
                        "Content-Type":"application/json",

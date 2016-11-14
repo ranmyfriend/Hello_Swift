@@ -21,7 +21,7 @@ class HomeView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func createViews() {
+    fileprivate func createViews() {
         self.tableView = UITableView()
         self.tableView?.backgroundColor = .white
         self.tableView?.separatorColor = .white

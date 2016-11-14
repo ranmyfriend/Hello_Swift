@@ -10,16 +10,16 @@ import UIKit
 
 class BarButtonItemsFactory: NSObject {
     
-    public var manager:NavigationBarManager?
+    open var manager:NavigationBarManager?
     
-    public func barButtonItemForDictionary(navBarDict:[String:String], viewController:UIViewController) -> UIBarButtonItem? {
+    open func barButtonItemForDictionary(_ navBarDict:[String:String], viewController:UIViewController) -> UIBarButtonItem? {
         let selector = NSSelectorFromString((navBarDict["key"]?.appending("WithProperties:viewController:"))!)
         let barButtonItem = self.perform(selector, with: navBarDict,with: viewController)
         return barButtonItem?.takeUnretainedValue() as? UIBarButtonItem
     }
     
     //MARK:: BarButtonItems
-    internal func composeNotificationGroup(properties:Dictionary<String,String>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func composeNotificationGroup(_ properties:Dictionary<String,String>, viewController:UIViewController) ->UIBarButtonItem {
         let barButton = UIBarButtonItem()
         let customView = ComposeNotificationGroupBtnView.init(frame: CGRect(x:0, y:0, width:66.0, height:22.0))
         if let _ = viewController.self as? ComposeNotificationGroupBtnViewProtocol {
@@ -29,13 +29,13 @@ class BarButtonItemsFactory: NSObject {
         return barButton
     }
     
-    internal func composeBtn(properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func composeBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
         let composeBarButton = UIBarButtonItem()
         composeBarButton.tintColor = UIColor.init(colorLiteralRed: 72.0/355.0, green: 119/355.0, blue: 244.0/355.0, alpha: 1.0)
         composeBarButton.image = UIImage(named: "compose")
         return composeBarButton
     }
-    internal func cancelBtn(properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func cancelBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
         let cancelBarButton = UIBarButtonItem()
         let cancelView:OuterHotButton = OuterHotButton()
         let crossImage = UIImage(named:"crossWhite")
@@ -61,12 +61,12 @@ class BarButtonItemsFactory: NSObject {
         return cancelBarButton
     }
     
-    internal func nextBtn(properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
+    internal func nextBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
         let button = UIButton(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle("NEXT", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .disabled)
-        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 17)
+        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(17)
         button.sizeToFit()
         button.addTarget(viewController, action:Selector(("nextBtnClicked")), for: .touchUpInside)
 
@@ -76,12 +76,12 @@ class BarButtonItemsFactory: NSObject {
         return nextButton
     }
     
-    internal func cancelTextBtn(properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
+    internal func cancelTextBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
         let button = UIButton(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle("CANCEL", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .disabled)
-        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 17)
+        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(17)
         button.sizeToFit()
         button.addTarget(viewController, action:Selector(("cancelBtnClicked")), for: .touchUpInside)
         
@@ -91,12 +91,12 @@ class BarButtonItemsFactory: NSObject {
         return nextButton
     }
     
-    internal func doneBtn(properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
+    internal func doneBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
         let button = UIButton(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle("DONE", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .disabled)
-        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 17)
+        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(17)
         button.sizeToFit()
         button.addTarget(viewController, action:Selector(("doneBtnClicked")), for: .touchUpInside)
         
@@ -106,12 +106,12 @@ class BarButtonItemsFactory: NSObject {
         return nextButton
     }
     
-    internal func emptyTextBtn(properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
+    internal func emptyTextBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
         let button = UIButton(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle(" ", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .disabled)
-        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 17)
+        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(17)
         button.sizeToFit()
         
         let nextButton = UIBarButtonItem()
@@ -120,7 +120,7 @@ class BarButtonItemsFactory: NSObject {
         return nextButton
     }
     
-    internal func dummyTextBtn(properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
+    internal func dummyTextBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
         let button = UIButton(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle(" ", for: .normal)
         
@@ -130,7 +130,7 @@ class BarButtonItemsFactory: NSObject {
         return nextButton
     }
 
-    internal func spinner(properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
+    internal func spinner(_ properties:Dictionary<String,Any>, viewController:UIViewController) -> UIBarButtonItem {
         let spinner = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
         let spinnerBarButon = UIBarButtonItem()
         spinnerBarButon.customView = spinner
@@ -138,7 +138,7 @@ class BarButtonItemsFactory: NSObject {
         return spinnerBarButon
     }
     
-    internal func locationBtn(properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func locationBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
         let button = UIButton.init(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setImage(UIImage(named:"location"), for: .normal)
         button.sizeToFit()
@@ -149,12 +149,12 @@ class BarButtonItemsFactory: NSObject {
         return locationIconButton
     }
     
-    internal func followAllWith(properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func followAllWith(_ properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
         let button = UIButton.init(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle("FOLLOW ALL", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .disabled)
-        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 17)
+        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(17)
         button.sizeToFit()
         button.addTarget(viewController, action: Selector(("followAllBtnClicked")), for: .touchUpInside)
         let followAllButton = UIBarButtonItem.init(customView: button)
@@ -162,12 +162,12 @@ class BarButtonItemsFactory: NSObject {
         return followAllButton
     }
     
-    internal func sendBtn(properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func sendBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
         let button = UIButton.init(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle("SEND", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .disabled)
-        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 17)
+        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(17)
         button.sizeToFit()
         button.addTarget(viewController, action: Selector(("sendBtnClicked")), for: .touchUpInside)
         let sendButton = UIBarButtonItem.init(customView: button)
@@ -175,12 +175,12 @@ class BarButtonItemsFactory: NSObject {
         return sendButton
     }
     
-    internal func saveBtn(properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func saveBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
         let button = UIButton.init(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setTitle("SAVE", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.black, for: .disabled)
-        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(size: 17)
+        button.titleLabel?.font = UIFont.appThemeRegularFontWithSize(17)
         button.sizeToFit()
         button.addTarget(viewController, action: Selector(("saveBtnClicked")), for: .touchUpInside)
         let saveButton = UIBarButtonItem.init(customView: button)
@@ -188,7 +188,7 @@ class BarButtonItemsFactory: NSObject {
         return saveButton
     }
     
-    internal func searchIcon(properties:[String:Any], viewController:UIViewController) ->UIBarButtonItem {
+    internal func searchIcon(_ properties:[String:Any], viewController:UIViewController) ->UIBarButtonItem {
         let button = UIButton.init(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setImage(UIImage(named:"icon_search"), for: .normal)
         button.contentEdgeInsets = UIEdgeInsetsMake(0, -2, 0, 2)
@@ -199,7 +199,7 @@ class BarButtonItemsFactory: NSObject {
         return searchButton
     }
     
-    internal func inviteBtn(properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
+    internal func inviteBtn(_ properties:Dictionary<String,Any>, viewController:UIViewController) ->UIBarButtonItem {
         let button = UIButton.init(frame: CGRect(x:0, y:0, width:0, height:0))
         button.setImage(UIImage(named:"invite_user"), for: .normal)
         button.contentEdgeInsets = UIEdgeInsetsMake(0, -2, 0, 2)
