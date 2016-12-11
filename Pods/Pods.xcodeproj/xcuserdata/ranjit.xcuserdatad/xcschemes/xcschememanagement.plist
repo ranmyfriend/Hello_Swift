@@ -9,7 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DKImagePickerController.xcscheme</key>
+		<key>ImagePicker-ImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImagePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,7 +37,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>7006EE2A2E68085872A8E679551C4ACC</key>
+		<key>09A62655F66AE53A474D64E42E6E9DF9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>37B57888E4C1AFE4FCA4BD22A3A9D2CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3BFF9F651824EF6D7159B996DAA71D25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7DE6DA79AC7D9E533A8C17D8AA63087</key>
+		<key>B6C54AF96D2251C183BC2C2A65CC69B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F046D47557AFA44C5B12D84054180F53</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F29AF9441B3107A70E8BF723A47C1546</key>
+		<key>FAC637704F19C0E046E894FF343D86C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
