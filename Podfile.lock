@@ -1,21 +1,21 @@
 PODS:
-  - Alamofire (4.0.1)
-  - ImagePicker (2.0.0)
-  - SwiftyJSON (3.1.1)
-  - TextFieldEffects (1.3.0)
+  - Alamofire (4.4.0)
+  - ImagePicker (2.1.1)
+  - SwiftyJSON (3.1.4)
+  - TextFieldEffects (1.3.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0.1)
+  - Alamofire (~> 4.4)
   - ImagePicker
-  - SwiftyJSON (~> 3.1)
+  - SwiftyJSON (~> 3.1.4)
   - TextFieldEffects
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
-  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
-  TextFieldEffects: ef594746f17997c813e07633f8ae5acaf9b04f27
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  ImagePicker: fe4c699abb56ff03994fa98d8b02e3883ee118be
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TextFieldEffects: 9e5cce561ea39c75b86e9d3637601727a67e8b23
 
-PODFILE CHECKSUM: 46b1f74c9d478284ae0cc7d13a00f4dc55fdd527
+PODFILE CHECKSUM: 0c899aeea8d08f6b1d9302c828daaa7a9dc789f6
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

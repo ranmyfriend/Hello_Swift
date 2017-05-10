@@ -65,7 +65,7 @@ import UIKit
     private let placeholderInsets = CGPoint(x: 6, y: 6)
     private let textFieldInsets = CGPoint(x: 6, y: 6)
     
-    // MARK: - TextFieldsEffects
+    // MARK: - TextFieldEffects
     
     override open func drawViewsForRect(_ rect: CGRect) {
         updateForeground()
@@ -200,7 +200,7 @@ import UIKit
         
         var rotationAndPerspectiveTransform = CATransform3DIdentity
         rotationAndPerspectiveTransform.m34 = 1.0/800
-        let radians = ((-90) / 180.0 * CGFloat(M_PI))
+        let radians = ((-90) / 180.0 * CGFloat.pi)
         rotationAndPerspectiveTransform = CATransform3DRotate(rotationAndPerspectiveTransform, radians, 1.0, 0.0, 0.0)
         return rotationAndPerspectiveTransform
     }

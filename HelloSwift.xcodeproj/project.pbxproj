@@ -80,6 +80,7 @@
 		0764234A1DC6067D00EFC325 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076423481DC6067D00EFC325 /* Data.swift */; };
 		0764234B1DC6067D00EFC325 /* FetchNotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076423491DC6067D00EFC325 /* FetchNotesResponse.swift */; };
 		0764234D1DC60F1500EFC325 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0764234C1DC60F1500EFC325 /* HomeCell.swift */; };
+		077699C61EC3048A0043B80F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 077699C51EC3048A0043B80F /* .gitignore */; };
 		078C358B1DC37530007233A6 /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C358A1DC37530007233A6 /* AddNotesViewController.swift */; };
 		078C358D1DC3754C007233A6 /* AddNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C358C1DC3754C007233A6 /* AddNotesView.swift */; };
 		078C35901DC394FD007233A6 /* NotesActionsDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078C358F1DC394FD007233A6 /* NotesActionsDataCenter.swift */; };
@@ -209,6 +210,7 @@
 		076423481DC6067D00EFC325 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Data.swift; path = DataCenter/Models/Data.swift; sourceTree = "<group>"; };
 		076423491DC6067D00EFC325 /* FetchNotesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchNotesResponse.swift; path = DataCenter/Models/FetchNotesResponse.swift; sourceTree = "<group>"; };
 		0764234C1DC60F1500EFC325 /* HomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeCell.swift; path = Screens/HomeCell.swift; sourceTree = "<group>"; };
+		077699C51EC3048A0043B80F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		078C358A1DC37530007233A6 /* AddNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNotesViewController.swift; path = Screens/AddNotesViewController.swift; sourceTree = "<group>"; };
 		078C358C1DC3754C007233A6 /* AddNotesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNotesView.swift; path = Screens/AddNotesView.swift; sourceTree = "<group>"; };
 		078C358F1DC394FD007233A6 /* NotesActionsDataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotesActionsDataCenter.swift; path = DataCenter/Notes/NotesActionsDataCenter.swift; sourceTree = "<group>"; };
@@ -517,6 +519,7 @@
 		07FC6E0E1DBF490500A0632A = {
 			isa = PBXGroup;
 			children = (
+				077699C51EC3048A0043B80F /* .gitignore */,
 				07CB14561DC2A4C4007356BE /* HelloSwift-Bridging-Header.h */,
 				07FC6E191DBF490500A0632A /* HelloSwift */,
 				07FC6E181DBF490500A0632A /* Products */,
@@ -643,6 +646,7 @@
 				071CC5921DC7D76E009D5C27 /* Roboto-Thin.ttf in Resources */,
 				071CC58E1DC7D76E009D5C27 /* Roboto-Bold.ttf in Resources */,
 				07FC6E221DBF490500A0632A /* Assets.xcassets in Resources */,
+				077699C61EC3048A0043B80F /* .gitignore in Resources */,
 				071CC58F1DC7D76E009D5C27 /* Roboto-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,7 +666,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		895D9F75495FCC38AE2C818B /* [CP] Embed Pods Frameworks */ = {
@@ -891,7 +895,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A825E68692AB91C59D9173E8 /* Pods-HelloSwift.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = GWPPP8XM37;
@@ -909,7 +912,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D7BC6707B32C8427D689EEA /* Pods-HelloSwift.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = GWPPP8XM37;
