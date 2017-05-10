@@ -41,10 +41,10 @@ class SignupViewController: BaseViewController,signupViewProtocol {
             SignUpDataCenter.sharedInstance.signup(userName, email: email, password: password!){(response, responseObject, error) in
                 self.myView.hideLoadingView()
                 if (error != nil) {
-                    print("Server reported an error: \(error)")
+                    print("Server reported an error: \(String(describing: error))")
                 }else {
                     self.myView.cleanup()
-                    print("User has been registered (ASYNC): \(response)")
+                    print("User has been registered (ASYNC): \(String(describing: response))")
                     
                 }
             }

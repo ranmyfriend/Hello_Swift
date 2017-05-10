@@ -1,24 +1,10 @@
-# file
-
-#########################################################################
-#                                                                       #
-#       Title         - .gitignore file                                 #
-#       For           - MAC OSX , Xcode7 and Swift Source projects      #
-#       Updated by    - Ramdhan Choudhary                               #
-#       Updated on    - 13 - November - 2015                            #
-#                                                                       #
-#########################################################################
-
-########### Xcode ###########
-# Xcode temporary files that should never be committed
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
 build/
-DerivedData
-
-# NB: NIB/XIB files still exist even on Storyboard projects, so we want this
-*~.nib
-*.swp
+DerivedData/
 
 ## Various settings
 *.pbxuser
@@ -29,47 +15,29 @@ DerivedData
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata
+xcuserdata/
 
 ## Other
-*.xccheckout
 *.moved-aside
-*.xcuserstate
+*.xccheckout
 *.xcscmblueprint
-*.xcscheme
 
-########### OSX ###########
-# OS X temporary files that should never be committed
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-########## Obj-C/Swift specific ##########
+## Obj-C/Swift specific
 *.hmap
 *.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+.build/
 
 # CocoaPods
 #
@@ -89,6 +57,11 @@ Carthage/Build
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
 
 fastlane/report.xml
+fastlane/Preview.html
 fastlane/screenshots
+fastlane/test_output

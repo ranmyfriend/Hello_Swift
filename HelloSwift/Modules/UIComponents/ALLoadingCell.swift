@@ -108,7 +108,7 @@ class ALLoadingCell: UITableViewCell {
             let duration: TimeInterval = TimeInterval(multiplier)
             let rotations: Double = 1.0 * multiplier
             
-            let value: Double = (M_PI * 2.0 * rotations)
+            let value: Double = (Double.pi * 2.0 * rotations)
             
             let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
             rotationAnimation.duration = duration
